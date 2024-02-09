@@ -11,86 +11,89 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 // start dark mode
-const HSThemeAppearance = {
-  init() {
-    const defaultTheme = 'default';
-    let theme = localStorage.getItem('hs_theme') || defaultTheme;
 
-    if (document.querySelector('html').classList.contains('dark')) return;
-    this.setAppearance(theme);
-  },
-  _resetStylesOnLoad() {
-    const $resetStyles = document.createElement('style');
-    $resetStyles.innerText = `*{transition: unset !important;}`;
-    $resetStyles.setAttribute('data-hs-appearance-onload-styles', '');
-    document.head.appendChild($resetStyles);
-    return $resetStyles;
-  },
-  setAppearance(theme, saveInStore = true, dispatchEvent = true) {
-    const $resetStylesEl = this._resetStylesOnLoad();
+// const HSThemeAppearance = {
+//   init() {
+//       const defaultTheme = 'default'
+//       let theme = localStorage.getItem('hs_theme') || defaultTheme
 
-    if (saveInStore) {
-      localStorage.setItem('hs_theme', theme);
-    }
+//       if (document.querySelector('html').classList.contains('dark')) return
+//       this.setAppearance(theme)
+//   },
+//   _resetStylesOnLoad() {
+//       const $resetStyles = document.createElement('style')
+//       $resetStyles.innerText = `*{transition: unset !important;}`
+//       $resetStyles.setAttribute('data-hs-appearance-onload-styles', '')
+//       document.head.appendChild($resetStyles)
+//       return $resetStyles
+//   },
+//   setAppearance(theme, saveInStore = true, dispatchEvent = true) {
+//       const $resetStylesEl = this._resetStylesOnLoad()
 
-    document.querySelector('html').classList.remove('dark');
-    document.querySelector('html').classList.remove('default');
-    document.querySelector('html').classList.remove('auto');
+//       if (saveInStore) {
+//           localStorage.setItem('hs_theme', theme)
+//       }
 
-    document.querySelector('html').classList.add(this.getOriginalAppearance());
+//       if (theme === 'auto') {
+//           theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'
+//       }
 
-    setTimeout(() => {
-      $resetStylesEl.remove();
-    });
+//       document.querySelector('html').classList.remove('dark')
+//       document.querySelector('html').classList.remove('default')
+//       document.querySelector('html').classList.remove('auto')
 
-    if (dispatchEvent) {
-      window.dispatchEvent(new CustomEvent('on-hs-appearance-change', { detail: theme }));
-    }
-  },
-  getAppearance() {
-    let theme = this.getOriginalAppearance();
-    if (theme === 'auto') {
-      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-    }
-    return theme;
-  },
-  getOriginalAppearance() {
-    const defaultTheme = 'default';
-    return localStorage.getItem('hs_theme') || defaultTheme;
-  }
-};
+//       document.querySelector('html').classList.add(this.getOriginalAppearance())
 
-HSThemeAppearance.init();
+//       setTimeout(() => {
+//           $resetStylesEl.remove()
+//       })
 
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-  if (HSThemeAppearance.getOriginalAppearance() === 'auto') {
-    HSThemeAppearance.setAppearance('auto', false);
-  }
-});
+//       if (dispatchEvent) {
+//           window.dispatchEvent(new CustomEvent('on-hs-appearance-change', {detail: theme}))
+//       }
+//   },
+//   getAppearance() {
+//       let theme = this.getOriginalAppearance()
+//       if (theme === 'auto') {
+//           theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'
+//       }
+//       return theme
+//   },
+//   getOriginalAppearance() {
+//       const defaultTheme = 'default'
+//       return localStorage.getItem('hs_theme') || defaultTheme
+//   }
+// }
+// HSThemeAppearance.init()
 
-window.addEventListener('load', () => {
-  const $clickableThemes = document.querySelectorAll('[data-hs-theme-click-value]');
-  const $switchableThemes = document.querySelectorAll('[data-hs-theme-switch]');
+// window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+//   if (HSThemeAppearance.getOriginalAppearance() === 'auto') {
+//       HSThemeAppearance.setAppearance('auto', false)
+//   }
+// })
 
-  $clickableThemes.forEach($item => {
-    $item.addEventListener('click', () => HSThemeAppearance.setAppearance($item.getAttribute('data-hs-theme-click-value'), true, $item));
-  });
+// window.addEventListener('load', () => {
+//   const $clickableThemes = document.querySelectorAll('[data-hs-theme-click-value]')
+//   const $switchableThemes = document.querySelectorAll('[data-hs-theme-switch]')
 
-  $switchableThemes.forEach($item => {
-    $item.addEventListener('change', (e) => {
-      HSThemeAppearance.setAppearance(e.target.checked ? 'dark' : 'default');
-    });
+//   $clickableThemes.forEach($item => {
+//       $item.addEventListener('click', () => HSThemeAppearance.setAppearance($item.getAttribute('data-hs-theme-click-value'), true, $item))
+//   })
 
-    $item.checked = HSThemeAppearance.getAppearance() === 'dark';
-  });
+//   $switchableThemes.forEach($item => {
+//       $item.addEventListener('change', (e) => {
+//           HSThemeAppearance.setAppearance(e.target.checked ? 'dark' : 'default')
+//       })
 
-  window.addEventListener('on-hs-appearance-change', e => {
-    $switchableThemes.forEach($item => {
-      $item.checked = e.detail === 'dark';
-    });
-  });
-});
+//       $item.checked = HSThemeAppearance.getAppearance() === 'dark'
+//   })
 
+//   window.addEventListener('on-hs-appearance-change', e => {
+//       $switchableThemes.forEach($item => {
+//           $item.checked = e.detail === 'dark'
+//       })
+//   })
+// })
 
 
 // end dark mode
