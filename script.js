@@ -66,8 +66,8 @@ const HSThemeAppearance = {
       const defaultTheme = 'default'
       let theme = localStorage.getItem('hs_theme') || defaultTheme
 
-      if (document.querySelector('html').classList.contains('dark')) return
-      this.setAppearance(theme)
+     // if (document.querySelector('html').classList.contains('dark')) return
+     // this.setAppearance(theme)
   },
   _resetStylesOnLoad() {
       const $resetStyles = document.createElement('style')
@@ -83,9 +83,9 @@ const HSThemeAppearance = {
           localStorage.setItem('hs_theme', theme)
       }
 
-      if (theme === 'auto') {
-          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'
-      }
+     // if (theme === 'auto') {
+       //   theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'
+      //}
 
       document.querySelector('html').classList.remove('dark')
       document.querySelector('html').classList.remove('default')
