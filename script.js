@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const HSThemeAppearance = {
   init() {
-      const defaultTheme = 'default'
+      const defaultTheme = 'light'
       let theme = localStorage.getItem('hs_theme') || defaultTheme
 
       if (document.querySelector('html').classList.contains('dark')) return
