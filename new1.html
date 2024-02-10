@@ -5,7 +5,6 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create Tailwind</title>
-       <!--<link rel="stylesheet" href="/style.css" /> -->
     <style>
       .article-container {
         display: flex;
@@ -27,33 +26,18 @@
         flex-direction: column;
         margin-left: 10px; /* Adjust as needed */
         height: auto;
-        
       }
 
       .image-container img {
         width: 250px; /* Adjust image width as needed */
         height: auto; /* Maintain aspect ratio */
+        cursor: pointer;
       }
     </style>
-        <script>
-          window.addEventListener('load', () => {
-            const imageContainer = document.querySelector('.image-container');
-            const images = imageContainer.querySelectorAll('img');
-            const gap = 60; // Adjust the gap between images if needed
-    
-            let totalHeight = 0;
-            images.forEach(image => {
-              totalHeight += image.offsetHeight + gap;
-            });
-    
-            // Set the height of the image container
-            imageContainer.style.height = totalHeight + 'px';
-          });
-        </script>
   </head>
 
-  <body class=" dark:bg-gray-900 dark:text-white">
-    <div class="max-w-[1296px] mx-auto flex flex-col gap-2 p-2 dark:bg-gray-900 dark:text-white">
+  <body>
+    <div class="max-w-[1296px] mx-auto flex flex-col gap-2 p-24">
       <div class="article-container">
         <div class="article">
           <!-- Picture -->
@@ -95,16 +79,37 @@
             <p class="par">But Trump remains a credible presidential candidate and enjoys the loyalty of tens of millions of Americans, who accept his arguments that he was cheated out of office and that Biden has failed to secure their safety by not shutting down the border — even though the president insists he lacks the authority to do so.</p>
 
         </div>
-        <div class="image-container border border-slate-700">
-            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-1991297800.jpg?c=16x9&q=h_833,w_1480,c_fill" alt="Image 1">
-            <p class="text-center text-lg leading-relaxed mb-4">This is a facebook1.</p>
-            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-1991297800.jpg?c=16x9&q=h_833,w_1480,c_fill" alt="Image 2">
-            <p class="text-center text-lg leading-relaxed mb-4">This is a facebook2.</p>
-            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-1991297800.jpg?c=16x9&q=h_833,w_1480,c_fill" alt="Image 3">
-            <p class="text-center text-lg leading-relaxed mb-4">This is a facebook3.</p>
-            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-1991297800.jpg?c=16x9&q=h_833,w_1480,c_fill" alt="Image 3">
-            <p class="text-center text-lg leading-relaxed mb-4">This is a facebook3.</p>
+        <div class="image-container border border-slate-700 hidden md:block lg:block">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/230922092842-01-nikki-haley-092123.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp" alt="Image 1" onclick="loadPage('new2.html')">
+            <p class="text-center text-lg leading-relaxed mb-4 cursor-pointer" onclick="loadPage('new2.html')">new2</p>
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/shutterstock-editorial-14333753m.jpeg?c=16x9&q=h_653,w_1160,c_fill/f_webp" alt="Image 2" onclick="loadPage('messi.html')">
+            <p class="text-center text-lg leading-relaxed mb-4 cursor-pointer" onclick="loadPage('messi.html')">messi.</p>
         </div>
+        <script>
+          // Function to adjust image container height
+          function adjustImageContainerHeight() {
+            const images = document.querySelectorAll('.image-container img');
+            let maxHeight = 0;
+        
+            // Loop through images to find the maximum height
+            images.forEach(image => {
+              const height = image.offsetHeight;
+              maxHeight +=height+45;
+            });
+        
+            // Set the height of the image container to the maximum height
+            const imageContainer = document.querySelector('.image-container');
+            imageContainer.style.height = `${maxHeight}px`;
+          }
+        
+          // Use setTimeout to ensure images are loaded before adjusting container height
+          setTimeout(adjustImageContainerHeight, 100);
+        
+          // Use DOMContentLoaded to ensure script execution after HTML is fully loaded
+          document.addEventListener('DOMContentLoaded', adjustImageContainerHeight);
+        </script>
+        
+        
       </div>
 
       <form>
@@ -176,12 +181,9 @@
             </div>
           </div>
         </form>
-        <div class="text-sm font-medium text-gray-500 dark:text-gray-300">By subscribing, you agree with ConvertKit's <a rel="nofollow" href="https://convertkit.com/terms" class="text-blue-600 hover:underline dark:text-blue-500">Terms of Service</a> and <a rel="nofollow" class="text-blue-600 hover:underline dark:text-blue-500" href="https://convertkit.com/privacy">Privacy Policy</a>.</div>
+        <div class="text-sm font-medium text-gray-500 dark:text-gray-300">By subscribing, you agree with ConvertKit's <a rel="nofollow" href="#" class="text-blue-600 hover:underline dark:text-blue-500">Terms of Service</a> and <a rel="nofollow" class="text-blue-600 hover:underline dark:text-blue-500" href="#">Privacy Policy</a>.</div>
       </aside>
       <p class="ms-auto text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
     </div>
-
-
-    
   </body>
 </html>
