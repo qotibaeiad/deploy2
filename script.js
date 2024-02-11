@@ -9,6 +9,14 @@ document.addEventListener('DOMContentLoaded', function () {
     dropdownMenu.classList.toggle('opacity-100');
     dropdownMenu.classList.toggle('hidden');
   });
+  document.addEventListener('click', (event) => {
+    const isDropdownButton = dropdownButton.contains(event.target);
+    const isDropdownMenu = dropdownMenu.contains(event.target);
+  
+    if (!isDropdownButton && !isDropdownMenu) {
+      dropdownMenu.classList.add('hidden');
+    }
+  });
 
 // // darkmode start youtube
 
