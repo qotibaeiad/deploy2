@@ -8,6 +8,9 @@ const dropdownMenu = document.querySelector('.hs-dropdown-menu');
 dropdownButton.addEventListener('click', () => {
   dropdownMenu.classList.toggle('opacity-100');
   dropdownMenu.classList.toggle('hidden');
+
+  // Toggle the rotation class for the arrow
+  dropdownButton.querySelector('.arrow').classList.toggle('rotate-180');
 });
 
 dropdownMenu.addEventListener('click', (event) => {
@@ -16,6 +19,8 @@ dropdownMenu.addEventListener('click', (event) => {
     dropdownButton.querySelector('span').textContent = selectedOption;
     dropdownMenu.classList.remove('opacity-100');
     dropdownMenu.classList.add('hidden');
+    // Reset the rotation class when an item is selected
+    dropdownButton.querySelector('.arrow').classList.remove('rotate-180');
   }
 });
 
