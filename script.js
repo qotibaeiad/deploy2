@@ -5,19 +5,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const dropdownButton = document.getElementById('hs-dropdown-hover-event');
   const dropdownMenu = document.querySelector('.hs-dropdown-menu');
 
-  dropdownButton.addEventListener('click', () => {
-    dropdownMenu.classList.toggle('opacity-100');
-    dropdownMenu.classList.toggle('hidden');
-  });
   document.addEventListener('click', (event) => {
     const isDropdownButton = dropdownButton.contains(event.target);
     const isDropdownMenu = dropdownMenu.contains(event.target);
   
     if (!isDropdownButton && !isDropdownMenu) {
-      dropdownMenu.classList.toggle('opacity-100');
-    dropdownMenu.classList.toggle('hidden');
+      dropdownMenu.classList.add('hidden');
     }
   });
+  
+  dropdownButton.addEventListener('click', (event) => {
+    event.stopPropagation(); // Prevent the click event from reaching the document
+  
+    dropdownMenu.classList.toggle('opacity-100');
+    dropdownMenu.classList.toggle('hidden');
+  });
+  
 
 // // darkmode start youtube
 
