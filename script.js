@@ -13,7 +13,7 @@ dropdownButton.addEventListener('click', () => {
 dropdownMenu.addEventListener('click', (event) => {
   if (event.target.tagName === 'A') {
     const selectedOption = event.target.textContent.trim();
-    dropdownButton.innerHTML = selectedOption + ' &#9660;'; 
+    dropdownButton.querySelector('span').textContent = selectedOption;
     dropdownMenu.classList.remove('opacity-100');
     dropdownMenu.classList.add('hidden');
   }
