@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
   dropdownButton.addEventListener('click', () => {
     dropdownMenu.classList.toggle('opacity-100');
     dropdownMenu.classList.toggle('hidden');
-    arrowIcon.classList.toggle('rotate-180'); // Add or remove the class to rotate the arrow
+    arrowIcon.classList.toggle('rotate-90'); // Add or remove the class to rotate the arrow
   });
 
   dropdownMenu.addEventListener('click', (event) => {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
       dropdownButton.querySelector('span').textContent = selectedOption;
       dropdownMenu.classList.remove('opacity-100');
       dropdownMenu.classList.add('hidden');
-      arrowIcon.classList.remove('rotate-180'); // Reset arrow direction when dropdown is closed
+      arrowIcon.classList.remove('rotate-90'); // Reset arrow direction when dropdown is closed
     }
   });
 
