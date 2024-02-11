@@ -14,10 +14,6 @@ dropdownMenu.addEventListener('click', (event) => {
   if (event.target.tagName === 'A') {
     const selectedOption = event.target.textContent.trim();
     dropdownButton.textContent = selectedOption;
-
-    // If you need to perform additional actions based on the selected option, you can add your logic here.
-
-    // Close the dropdown after selection (optional)
     dropdownMenu.classList.remove('opacity-100');
     dropdownMenu.classList.add('hidden');
   }
