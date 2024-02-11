@@ -61,7 +61,7 @@
       <div class="hidden lg:flex space-x-4">
         <a href="#" class="hover:text-gray-300" onclick="loadPage('gridlnews.html')">Home</a>
         <a id="changeBtn"  href="#" class="hover:text-gray-300">About</a>
-        <a href="#" onclick="loadPage('profile.html')" class="hover:text-gray-300">Services</a>
+        <a href="#" class="hover:text-gray-300">Services</a>
         <a href="#" onclick="loadPage('Login.html')" class="hover:text-gray-300">Logout</a>
       </div>
 
@@ -74,7 +74,7 @@
             sports
             <svg class="hs-dropdown-open:rotate-180 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
-          <div class="hs-dropdown-menu transition-[opacity,margin] mr-20 duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-[15rem] bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-gray-800 dark:border dark:border-gray-700 dark:divide-gray-700 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full" aria-labelledby="hs-dropdown-hover-event">
+          <div class="hs-dropdown-menu transition-[opacity,margin] ml-6 duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-[15rem] bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-gray-800 dark:border dark:border-gray-700 dark:divide-gray-700 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full" aria-labelledby="hs-dropdown-hover-event">
             <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:bg-gray-700" href="#">
               politics
             </a>
@@ -116,7 +116,7 @@
     <div class="flex flex-col items-center">
       <a href="#"  onclick="loadPage('gridlnews.html')" class="text-white py-2 hover:scale-150">Home</a>
       <a href="#"  class="text-white py-2 hover:scale-150">About</a>
-      <a href="#" onclick="loadPage('profile.html')"   class="text-white py-2 hover:scale-150">Services</a>
+      <a href="#"   class="text-white py-2 hover:scale-150">Services</a>
       <a href="#" onclick="loadPage('Login.html')"  class=" text-white py-2 hover:scale-150">Logout</a>
     </div>
     
@@ -124,7 +124,14 @@
 
 
 
-  
+  <!-- contac start -->
+  <div id="content-container"></div>
+  <div id="includedContent" class="w-full"></div>
+    <script>
+      $(function(){
+        $("#includedContent").load("/contact.html");
+      });
+  </script>
 
   <script>
     const mtwAppConfig = {
@@ -145,7 +152,6 @@
         // your code here:
         //sendRequestToParent({ method: 'getAssets' })
     })
-    
   </script>
   <script src="https://morethanwallet.com/appstore/index.js"></script>
   
