@@ -5,79 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const dropdownButton = document.getElementById('hs-dropdown-hover-event');
   const dropdownMenu = document.querySelector('.hs-dropdown-menu');
 
-  // dropdownButton.addEventListener('click', () => {
-  //   dropdownMenu.classList.toggle('opacity-100');
-  //   dropdownMenu.classList.toggle('hidden');
-  // });
+  dropdownButton.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('opacity-100');
+    dropdownMenu.classList.toggle('hidden');
+  });
 
-
-
-  // 
-  document.getElementById('hs-dropdown-hover-event').addEventListener('click', function() {
-    var dropdownOptions = document.getElementById('hs-dropdown-menu');
-    dropdownOptions.classList.toggle('hidden');
-});
-
-// Close dropdown when clicking outside of it
-window.addEventListener('click', function(event) {
-    var dropdownOptions = document.getElementById('hs-dropdown-menu');
-    var dropdownButton = document.getElementById('hs-dropdown-hover-event');
-    
-    if (!dropdownOptions.contains(event.target) && !dropdownButton.contains(event.target)) {
-        dropdownOptions.classList.add('hidden');
-    }
-});
-
-// // darkmode start youtube
-
-// const sunIcon = document.querySelector(".sun");
-// const moonIcon = document.querySelector(".moon");
-
-// const userTheme = localStorage.getItem("theme");
-// const systemTheme = window.matchMedia(("prefer-color-scheme: dark")).matches;
-
-
-// const iconToggle = ()=>{
-//     moonIcon.classList.toggle("display-none");
-//     sunIcon.classList.toggle("display-none");
-// };
-
-
-// const themCheck = () => {
-//     if(userTheme ==="dark" || (!userTheme && systemTheme)){
-//         document.documentElement.classList.add("dark");
-//         moonIcon.classList.add("display-none");
-//         return;
-//     }
-//     sunIcon.classList.add("display-none");
-// };
-
-// const themSwitch = () =>{
-//     if (document.documentElement.classList.contains("dark")){
-//         document.documentElement.classList.remove("dark");
-//         localStorage.setItem("theme","light");
-//         iconToggle();
-//         return;
-//     }
-//     document.documentElement.classList.add("dark");
-//     localStorage.setItem("theme","dark");
-//     iconToggle();
-// };
-
-// sunIcon.addEventListener("click",()=>{
-//     themSwitch();
-// });
-
-// moonIcon.addEventListener("click",()=>{
-//     themSwitch();
-// });
-
-// themCheck();
-
-// // darkmode end youtube
-
-
-// start dark mode
 
 const HSThemeAppearance = {
   init() {
@@ -163,17 +95,6 @@ window.addEventListener('load', () => {
 })
 
 
-// end dark mode
-
-  
-
-  // // Close the dropdown when clicking outside of it
-  // document.addEventListener('click', (event) => {
-  //   if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-  //     dropdownMenu.classList.add('hidden');
-  //   }
-  // });
-
   drawerToggle.addEventListener('click', () => {
     drawer.classList.toggle('hidden');
   });
@@ -181,15 +102,6 @@ window.addEventListener('load', () => {
   drawerClose.addEventListener('click', () => {
     drawer.classList.add('hidden');
   });
-
-  // Assuming you have a button with an ID of 'darkModeToggle'
-  // const darkModeToggle = document.getElementById('darkModeToggle');
-  // const body = document.body;
-  // darkModeToggle.addEventListener('click', () => {
-  //   body.classList.toggle('dark');
-  // });
-
-  // Load 'gridlnews.html' by default
   loadPage('gridlnews.html');
 });
 
@@ -204,27 +116,17 @@ function checkLogin() {
 }
 
 function loadPage(page) {
-  // Use AJAX to load the content of the specified HTML page
   $.ajax({
     url: page,
     type: 'GET',
     success: function(data) {
-      // Replace the content of the 'content' div with the loaded HTML
       $('#content-container').html(data);
 
-      // Hide the drawer after loading the new page
       const drawer = document.getElementById('drawer');
       drawer.classList.add('hidden');
     },
     error: function() {
-      // Handle errors if necessary
       alert('Error loading page.');
     }
   });
 }
-
-
-
-
-
-
