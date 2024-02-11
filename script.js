@@ -5,22 +5,41 @@ document.addEventListener('DOMContentLoaded', function () {
   const dropdownButton = document.getElementById('hs-dropdown-hover-event');
   const dropdownMenu = document.querySelector('.hs-dropdown-menu');
 
-  document.addEventListener('click', (event) => {
-    const isDropdownButton = dropdownButton.contains(event.target);
-    const isDropdownMenu = dropdownMenu.contains(event.target);
+  // drop down start
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const dropdownButton = document.getElementById('hs-dropdown-hover-event');
+    const dropdownMenu = document.querySelector('.hs-dropdown-menu');
+    let dropdownVisible = false;
   
-    if (!isDropdownButton && !isDropdownMenu) {
-      dropdownMenu.classList.add('hidden');
+    dropdownButton.addEventListener('click', () => {
+      dropdownVisible = !dropdownVisible;
+      updateDropdownVisibility();
+    });
+  
+    document.addEventListener('click', (event) => {
+      const isDropdownButton = dropdownButton.contains(event.target);
+      const isDropdownMenu = dropdownMenu.contains(event.target);
+  
+      if (!isDropdownButton && !isDropdownMenu && dropdownVisible) {
+        dropdownVisible = false;
+        updateDropdownVisibility();
+      }
+    });
+  
+    function updateDropdownVisibility() {
+      if (dropdownVisible) {
+        dropdownMenu.classList.remove('hidden');
+        dropdownMenu.classList.add('opacity-100');
+      } else {
+        dropdownMenu.classList.add('hidden');
+        dropdownMenu.classList.remove('opacity-100');
+      }
     }
+  
+  
   });
-  
-  dropdownButton.addEventListener('click', (event) => {
-    event.stopPropagation(); // Prevent the click event from reaching the document
-  
-    dropdownMenu.classList.toggle('opacity-100');
-    dropdownMenu.classList.toggle('hidden');
-  });
-  
+  // drop down end 
 
 // // darkmode start youtube
 
