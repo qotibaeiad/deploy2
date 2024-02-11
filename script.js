@@ -5,41 +5,28 @@ document.addEventListener('DOMContentLoaded', function () {
   const dropdownButton = document.getElementById('hs-dropdown-hover-event');
   const dropdownMenu = document.querySelector('.hs-dropdown-menu');
 
-  // drop down start
+  // dropdownButton.addEventListener('click', () => {
+  //   dropdownMenu.classList.toggle('opacity-100');
+  //   dropdownMenu.classList.toggle('hidden');
+  // });
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const dropdownButton = document.getElementById('hs-dropdown-hover-event');
-    const dropdownMenu = document.querySelector('.hs-dropdown-menu');
-    let dropdownVisible = false;
-  
-    dropdownButton.addEventListener('click', () => {
-      dropdownVisible = !dropdownVisible;
-      updateDropdownVisibility();
-    });
-  
-    document.addEventListener('click', (event) => {
-      const isDropdownButton = dropdownButton.contains(event.target);
-      const isDropdownMenu = dropdownMenu.contains(event.target);
-  
-      if (!isDropdownButton && !isDropdownMenu && dropdownVisible) {
-        dropdownVisible = false;
-        updateDropdownVisibility();
-      }
-    });
-  
-    function updateDropdownVisibility() {
-      if (dropdownVisible) {
-        dropdownMenu.classList.remove('hidden');
-        dropdownMenu.classList.add('opacity-100');
-      } else {
-        dropdownMenu.classList.add('hidden');
-        dropdownMenu.classList.remove('opacity-100');
-      }
+
+
+  // 
+  document.getElementById('hs-dropdown-hover-event').addEventListener('click', function() {
+    var dropdownOptions = document.getElementById('hs-dropdown-menu');
+    dropdownOptions.classList.toggle('hidden');
+});
+
+// Close dropdown when clicking outside of it
+window.addEventListener('click', function(event) {
+    var dropdownOptions = document.getElementById('hs-dropdown-menu');
+    var dropdownButton = document.getElementById('hs-dropdown-hover-event');
+    
+    if (!dropdownOptions.contains(event.target) && !dropdownButton.contains(event.target)) {
+        dropdownOptions.classList.add('hidden');
     }
-  
-  
-  });
-  // drop down end 
+});
 
 // // darkmode start youtube
 
