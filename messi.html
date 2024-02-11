@@ -4,99 +4,69 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Tailwind</title>
-    <!-- <link rel="stylesheet" href="/style.css" /> -->
-    <style>
-      .article-container {
-        display: flex;
-      }
-
-      .article {
-        flex: 1;
-      }
-
-      .par {
-       font-family: 'Times New Roman', Times, serif;
-       font-size: 18px;
-       padding-bottom: 20px;
-      }
-
-      .image-container {
-        display: flex;
-        flex-direction: column;
-        margin-left: 10px; /* Adjust as needed */
-        height: auto;
-        
-      }
-
-      .image-container img {
-        width: 250px; /* Adjust image width as needed */
-        height: auto; /* Maintain aspect ratio */
-        cursor: pointer;
-      }
-    </style>
   </head>
 
-  <body >
+  <body>
     <div class="max-w-[1296px] mx-auto flex flex-col gap-2 p-24">
-      <div class="article-container">
-        <div class="article">
+      <div class="flex">
+        <div class="flex-1">
           <!-- Picture -->
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/shutterstock-editorial-14333753m.jpeg?c=16x9&q=h_653,w_1160,c_fill/f_webp " alt="Description of the image" class="mx-auto mb-4" style="width: 630px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);"/>
             <h1 class="text-3xl font-bold mb-4 py-3">Lionel Messi expresses regret over not being able to play in Hong Kong
-              <p class="text-sm text-gray-600 italic py-2">By Teele Rebane, CNN</p>
-              <p class="text-sm text-gray-600 italic">Updated 6:50 AM EST, Tue February 6, 2024</p>
+              <p class="text-sm dark:text-white text-gray-600 italic py-2">By Teele Rebane, CNN</p>
+              <p class="text-sm dark:text-white text-gray-600 italic">Updated 6:50 AM EST, Tue February 6, 2024</p>
             </h1>
-            <p class="par"><strong>(CNN)-</strong>Argentine soccer star Lionel Messi expressed regret Tuesday over not being able to play in a friendly match in Hong Kong.</p>
-            <p class="par">Messi, who plays for Major League Soccer team Inter Miami, did not step onto the pitch to play against a Hong Kong XI on Sunday, causing outrage among fans. He has since said that he was kept off the field due to an injury but wanted to play.</p>
-            <p class="par">“I couldn’t be in the Hong Kong game and it’s a shame because I always want to participate, I want to be there, especially when it’s about these types of games that we travel so far and that people are so excited to see our games,” Messi told reporters.</p>
+            <p class="font-serif text-base pb-5"><strong>(CNN)-</strong>Argentine soccer star Lionel Messi expressed regret Tuesday over not being able to play in a friendly match in Hong Kong.</p>
+            <p class="font-serif text-base pb-5">Messi, who plays for Major League Soccer team Inter Miami, did not step onto the pitch to play against a Hong Kong XI on Sunday, causing outrage among fans. He has since said that he was kept off the field due to an injury but wanted to play.</p>
+            <p class="font-serif text-base pb-5">“I couldn’t be in the Hong Kong game and it’s a shame because I always want to participate, I want to be there, especially when it’s about these types of games that we travel so far and that people are so excited to see our games,” Messi told reporters.</p>
             <div class="leftPic">
               <img src="https://media.cnn.com/api/v1/images/stellar/prod/shutterstock-editorial-14333753m.jpeg?c=16x9&q=h_653,w_1160,c_fill/f_webp" alt="Description of the image" class="float-left mr-3" style="width: 400px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);">
-              <p class="par">The 36-year-old’s huge popularity has had fans clamoring to watch Inter Miami’s games during the team’s preseason tour.</p>
-              <p class="par">A sellout crowd of 40,000 attended the match in Hong Kong, but the occasion ended acrimoniously when fans booed, jeered and called for ticket refunds as Messi remained on the bench.</p>
-              <p class="par">Even the Hong Kong government said it was “disappointed” that the eight-time Ballon d’Or winner wasn’t brought on during the match.</p>
+              <p class="font-serif text-base pb-5">The 36-year-old’s huge popularity has had fans clamoring to watch Inter Miami’s games during the team’s preseason tour.</p>
+              <p class="font-serif text-base pb-5">A sellout crowd of 40,000 attended the match in Hong Kong, but the occasion ended acrimoniously when fans booed, jeered and called for ticket refunds as Messi remained on the bench.</p>
+              <p class="font-serif text-base pb-5">Even the Hong Kong government said it was “disappointed” that the eight-time Ballon d’Or winner wasn’t brought on during the match.</p>
             </div>
-            <p class="par">Miami manager Gerardo “Tata” Martino later explained that both Messi and former Barça teammate Luis Suárez had remained on the bench following advice from medical staff.</p>
-            <p class="par">Inter Miami is now in Tokyo for the next leg of a preseason tour and will face Japanese side Vissel Kobe on Wednesday.</p>
-            <p class="par">Messi added that he could understand why people were upset that he had not participated in the match, but expressed hope that Miami could play in Hong Kong again at some point.</p>
-            <p class="par">When asked if he would be playing in the match against Vissel Kobe, the forward said, “If I’m honest, I still don’t know if I can or not, but I feel much better and I really want to be able to do it.”</p>
+            <p class="font-serif text-base pb-5">Miami manager Gerardo “Tata” Martino later explained that both Messi and former Barça teammate Luis Suárez had remained on the bench following advice from medical staff.</p>
+            <p class="font-serif text-base pb-5">Inter Miami is now in Tokyo for the next leg of a preseason tour and will face Japanese side Vissel Kobe on Wednesday.</p>
+            <p class="font-serif text-base pb-5">Messi added that he could understand why people were upset that he had not participated in the match, but expressed hope that Miami could play in Hong Kong again at some point.</p>
+            <p class="font-serif text-base pb-5">When asked if he would be playing in the match against Vissel Kobe, the forward said, “If I’m honest, I still don’t know if I can or not, but I feel much better and I really want to be able to do it.”</p>
         </div>
-        <div class="image-container border border-slate-700 hidden md:block lg:block">
-            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-1991297800.jpg?c=16x9&q=h_833,w_1480,c_fill" alt="Image 1" onclick="loadPage('new1.html')">
+        <div id="image-container" class="flex flex-col ml-4 border border-slate-700 md:block lg:block">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-1991297800.jpg?c=16x9&q=h_833,w_1480,c_fill" alt="Image 1" onclick="loadPage('new1.html')" class="w-64 cursor-pointer">
             <p class="text-center text-lg leading-relaxed mb-4 cursor-pointer" onclick="loadPage('new1.html')">new1</p>
-            <img src="https://media.cnn.com/api/v1/images/stellar/prod/230922092842-01-nikki-haley-092123.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp" alt="Image 2" onclick="loadPage('new2.html')">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/230922092842-01-nikki-haley-092123.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp" alt="Image 2" onclick="loadPage('new2.html')" class="w-64 cursor-pointer">
             <p class="text-center text-lg leading-relaxed mb-4 cursor-pointer" onclick="loadPage('new2.html')">new2</p>
         </div>
         <script>
           // Function to adjust image container height
           function adjustImageContainerHeight() {
-            const images = document.querySelectorAll('.image-container img');
-            let maxHeight = 0;
-        
-            // Loop through images to find the maximum height
-            images.forEach(image => {
-              const height = image.offsetHeight;
-              maxHeight +=height+45;
-            });
-        
-            // Set the height of the image container to the maximum height
-            const imageContainer = document.querySelector('.image-container');
-            imageContainer.style.height = `${maxHeight}px`;
+              const images = document.querySelectorAll('#image-container img');
+              let maxHeight = 0;
+      
+              // Loop through images to find the maximum height
+              images.forEach(image => {
+                  const height = image.offsetHeight;
+                  maxHeight += height + 45;
+              });
+      
+              // Set the height of the image container to the maximum height
+              const imageContainer = document.getElementById('image-container');
+              imageContainer.style.height = `${maxHeight}px`;
           }
-        
+      
           // Use setTimeout to ensure images are loaded before adjusting container height
           setTimeout(adjustImageContainerHeight, 100);
-        
+      
           // Use DOMContentLoaded to ensure script execution after HTML is fully loaded
           document.addEventListener('DOMContentLoaded', adjustImageContainerHeight);
-        </script>
+      </script>
+      
       </div>
 
       <form>
         <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
           <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
             <label for="comment" class="sr-only">Your comment</label>
-            <textarea id="comment" rows="4" class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write a comment..." required></textarea>
+            <textarea id="comment" rows="4" class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write a comment..."></textarea>
           </div>
           <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
             <div>
@@ -165,5 +135,6 @@
       </aside>
       <p class="ms-auto text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
     </div>
+
   </body>
 </html>

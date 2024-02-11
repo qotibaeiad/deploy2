@@ -4,105 +4,75 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Tailwind</title>
-     <!--  <link rel="stylesheet" href="/style.css" /> -->
-    <style>
-      .article-container {
-        display: flex;
-      }
-
-      .article {
-        flex: 1;
-      }
-
-      .par {
-       font-family: 'Times New Roman', Times, serif;
-       font-size: 18px;
-       padding-bottom: 20px;
-      }
-
-      .image-container {
-        display: flex;
-        flex-direction: column;
-        margin-left: 10px; /* Adjust as needed */
-        height: auto;
-        
-      }
-
-      .image-container img {
-        width: 250px; /* Adjust image width as needed */
-        height: auto; /* Maintain aspect ratio */
-        cursor: pointer;
-      }
-    </style>
   </head>
 
   <body>
     <div class="max-w-[1296px] mx-auto flex flex-col gap-2 p-24">
-      <div class="article-container">
-        <div class="article">
+      <div class="flex">
+        <div class="flex-1">
           <!-- Picture -->
           <img src="https://media.cnn.com/api/v1/images/stellar/prod/230922092842-01-nikki-haley-092123.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp" alt="Description of the image" class="mx-auto mb-4" style="width: 630px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);"/>
             <h1 class="text-3xl font-bold mb-4 py-3">Nikki Haley will lose Nevada GOP primary to ‘none of these candidates’ as Biden notches Democratic win
-              <p class="text-sm text-gray-600 italic py-2">By Eric Bradner, CNN </p>
-              <p class="text-sm text-gray-600 italic">Updated 7:01 AM EST, Wed February 7, 2024</p>
+              <p class="text-sm dark:text-white text-gray-600 italic py-2">By Eric Bradner, CNN </p>
+              <p class="text-sm dark:text-white text-gray-600 italic">Updated 7:01 AM EST, Wed February 7, 2024</p>
             </h1>
-            <p class="par"><strong>(CNN)-</strong>Former South Carolina Gov. Nikki Haley will lose Nevada’s nonbinding Republican primary to “none of these candidates,” an embarrassing defeat in a contest that did not feature former President Donald Trump on the ballot.</p>
-            <p class="par">The outcome likely reflects many GOP voters’ preference for Trump in a state that gives them the option to express their dissatisfaction with all of the candidates on the ballot.</p>
-            <p class="par">“Even Donald Trump knows that when you play penny slots the house wins. We didn’t bother to play a game rigged for Trump. We’re full steam ahead in South Carolina and beyond,” Haley campaign spokesperson Olivia Perez-Cubas said in a statement to CNN. Haley is projected to receive the second-most votes in the primary.</p>
-            <p class="par">The GOP primary carried little weight, because state Republicans opted to award their delegates through party-run caucuses, which Trump is expected to win Thursday. The party barred those participating in the primary, including Haley, from being eligible for the caucuses, which means Trump will face little competition.</p>
-            <p class="par">Still, the outcome is an ignominious one for Haley, who is seeking to prove to Republican donors and voters that she remains a viable contender ahead of her next head-to-head contest with Trump in the February 24 South Carolina primary.</p>
-            <p class="par">Meanwhile, on the Democratic side in Nevada, President Joe Biden will win the state’s presidential primary, adding delegates from the first-in-the-West contest as he marches toward his party’s 2024 nomination.</p>
-            <p class="par">For Biden, Tuesday’s Silver State primary comes three days after he notched his first official victory of the 2024 nominating race in the South Carolina primary.</p>
-            <p class="par">Nevada’s first-in-the-West contest is now second on the Democratic calendar after the party demoted Iowa and New Hampshire — a change meant to ensure a diverse electorate weighs in at the start of Democrats’ presidential nominating battle.</p>
-            <p class="par">“Nevada Democrats represent the backbone of our nation: the union workers who built the middle class, immigrants who came here in search of opportunity, and families of all stripes who deserve dignity, personal freedom, and a fair shot at the American dream,” Biden said in a statement Tuesday night. “Tonight they showed us all: we still believe in an America where we treat everybody with honesty, decency, dignity, and respect. Where we leave nobody behind. I am so grateful for their support.”</p>
-            <p class="par">On the Democratic primary ballot, Biden faced only nominal opposition from a dozen candidates, including author Marianne Williamson. Minnesota Rep. Dean Phillips, the president’s other best-known Democratic challenger, is not on the ballot, having entered the race after the state’s October 16 filing deadline had passed.</p>
-            <p class="par">Biden spent Sunday in Las Vegas, where he told a rally crowd that they will “make Donald Trump a loser again.”</p>
-            <p class="par">He also touted his administration’s economic efforts, saying that he knows “we have a lot more to do” in a preview of how he could talk about a still-reeling economy during the general election.</p>
-            <p class="par">“Not everyone’s feeling the benefits from our investments and progress yet, but inflation is now lower in America than any other major economy in the world,” Biden said.</p>
-            <p class="par">Biden, who also attended a fundraiser during his recent swing through Las Vegas, is set to join former Presidents Bill Clinton and Barack Obama at a fundraiser in New York City on March 28, according to a Biden campaign fundraising email sent Tuesday.</p>
-            <p class="par">Meanwhile, Nevada Republicans are ignoring the outcome of Tuesday’s primary — one taking place without Trump on the ballot. Instead, the state GOP opted to award its delegates to the winner of party-run caucuses being held Thursday evening.</p>
-            <p class="par">The fractured process is the result of a 2021 state law that scrapped Nevada’s presidential caucuses in favor of government-run primaries. Advocates said the move would be less cumbersome to run and less confusing for voters.</p>
-            <p class="par">However, the Nevada Republican Party — which is led by Trump loyalists — opted to hold caucuses this year anyway and award the state’s delegates to the Republican National Convention based on those results. It also warned candidates who participated in the primary that they would not be eligible for the caucuses or to receive any delegates.</p>
-            <p class="par">Still, some Republican presidential contenders, including Haley, filed to run in the primary. Trump is now the last remaining major contender in Thursday’s caucuses, which effectively guarantees his victory.</p>
-            <p class="par">“In your state, you have both a primary and you have a caucus. Don’t worry about the primary, just do the caucus thing,” Trump told attendees at a recent Las Vegas rally.</p>       
+            <p class="font-serif text-base pb-5"><strong>(CNN)-</strong>Former South Carolina Gov. Nikki Haley will lose Nevada’s nonbinding Republican primary to “none of these candidates,” an embarrassing defeat in a contest that did not feature former President Donald Trump on the ballot.</p>
+            <p class="font-serif text-base pb-5">The outcome likely reflects many GOP voters’ preference for Trump in a state that gives them the option to express their dissatisfaction with all of the candidates on the ballot.</p>
+            <p class="font-serif text-base pb-5">“Even Donald Trump knows that when you play penny slots the house wins. We didn’t bother to play a game rigged for Trump. We’re full steam ahead in South Carolina and beyond,” Haley campaign spokesperson Olivia Perez-Cubas said in a statement to CNN. Haley is projected to receive the second-most votes in the primary.</p>
+            <p class="font-serif text-base pb-5">The GOP primary carried little weight, because state Republicans opted to award their delegates through party-run caucuses, which Trump is expected to win Thursday. The party barred those participating in the primary, including Haley, from being eligible for the caucuses, which means Trump will face little competition.</p>
+            <p class="font-serif text-base pb-5">Still, the outcome is an ignominious one for Haley, who is seeking to prove to Republican donors and voters that she remains a viable contender ahead of her next head-to-head contest with Trump in the February 24 South Carolina primary.</p>
+            <p class="font-serif text-base pb-5">Meanwhile, on the Democratic side in Nevada, President Joe Biden will win the state’s presidential primary, adding delegates from the first-in-the-West contest as he marches toward his party’s 2024 nomination.</p>
+            <p class="font-serif text-base pb-5">For Biden, Tuesday’s Silver State primary comes three days after he notched his first official victory of the 2024 nominating race in the South Carolina primary.</p>
+            <p class="font-serif text-base pb-5">Nevada’s first-in-the-West contest is now second on the Democratic calendar after the party demoted Iowa and New Hampshire — a change meant to ensure a diverse electorate weighs in at the start of Democrats’ presidential nominating battle.</p>
+            <p class="font-serif text-base pb-5">“Nevada Democrats represent the backbone of our nation: the union workers who built the middle class, immigrants who came here in search of opportunity, and families of all stripes who deserve dignity, personal freedom, and a fair shot at the American dream,” Biden said in a statement Tuesday night. “Tonight they showed us all: we still believe in an America where we treat everybody with honesty, decency, dignity, and respect. Where we leave nobody behind. I am so grateful for their support.”</p>
+            <p class="font-serif text-base pb-5">On the Democratic primary ballot, Biden faced only nominal opposition from a dozen candidates, including author Marianne Williamson. Minnesota Rep. Dean Phillips, the president’s other best-known Democratic challenger, is not on the ballot, having entered the race after the state’s October 16 filing deadline had passed.</p>
+            <p class="font-serif text-base pb-5">Biden spent Sunday in Las Vegas, where he told a rally crowd that they will “make Donald Trump a loser again.”</p>
+            <p class="font-serif text-base pb-5">He also touted his administration’s economic efforts, saying that he knows “we have a lot more to do” in a preview of how he could talk about a still-reeling economy during the general election.</p>
+            <p class="font-serif text-base pb-5">“Not everyone’s feeling the benefits from our investments and progress yet, but inflation is now lower in America than any other major economy in the world,” Biden said.</p>
+            <p class="font-serif text-base pb-5">Biden, who also attended a fundraiser during his recent swing through Las Vegas, is set to join former Presidents Bill Clinton and Barack Obama at a fundraiser in New York City on March 28, according to a Biden campaign fundraising email sent Tuesday.</p>
+            <p class="font-serif text-base pb-5">Meanwhile, Nevada Republicans are ignoring the outcome of Tuesday’s primary — one taking place without Trump on the ballot. Instead, the state GOP opted to award its delegates to the winner of party-run caucuses being held Thursday evening.</p>
+            <p class="font-serif text-base pb-5">The fractured process is the result of a 2021 state law that scrapped Nevada’s presidential caucuses in favor of government-run primaries. Advocates said the move would be less cumbersome to run and less confusing for voters.</p>
+            <p class="font-serif text-base pb-5">However, the Nevada Republican Party — which is led by Trump loyalists — opted to hold caucuses this year anyway and award the state’s delegates to the Republican National Convention based on those results. It also warned candidates who participated in the primary that they would not be eligible for the caucuses or to receive any delegates.</p>
+            <p class="font-serif text-base pb-5">Still, some Republican presidential contenders, including Haley, filed to run in the primary. Trump is now the last remaining major contender in Thursday’s caucuses, which effectively guarantees his victory.</p>
+            <p class="font-serif text-base pb-5">“In your state, you have both a primary and you have a caucus. Don’t worry about the primary, just do the caucus thing,” Trump told attendees at a recent Las Vegas rally.</p>       
         </div>
-        <div class="image-container border border-slate-700 hidden md:block lg:block">
-            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-1991297800.jpg?c=16x9&q=h_833,w_1480,c_fill" alt="Image 1" onclick="loadPage('new1.html')">
+        <div id="image-container" class="flex flex-col ml-4 border border-slate-700 md:block lg:block">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-1991297800.jpg?c=16x9&q=h_833,w_1480,c_fill" alt="Image 1" onclick="loadPage('new1.html')" class="w-64 cursor-pointer">
             <p class="text-center text-lg leading-relaxed mb-4 cursor-pointer" onclick="loadPage('new1.html')">new1</p>
-            <img src="https://media.cnn.com/api/v1/images/stellar/prod/shutterstock-editorial-14333753m.jpeg?c=16x9&q=h_653,w_1160,c_fill/f_webp" alt="Image 2" onclick="loadPage('messi.html')">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/shutterstock-editorial-14333753m.jpeg?c=16x9&q=h_653,w_1160,c_fill/f_webp" alt="Image 2" onclick="loadPage('messi.html')" class="w-64 cursor-pointer">
             <p class="text-center text-lg leading-relaxed mb-4 cursor-pointer" onclick="loadPage('messi.html')">messi</p>
         </div>
         <script>
           // Function to adjust image container height
           function adjustImageContainerHeight() {
-            const images = document.querySelectorAll('.image-container img');
-            let maxHeight = 0;
-        
-            // Loop through images to find the maximum height
-            images.forEach(image => {
-              const height = image.offsetHeight;
-              maxHeight +=height+45;
-            });
-        
-            // Set the height of the image container to the maximum height
-            const imageContainer = document.querySelector('.image-container');
-            imageContainer.style.height = `${maxHeight}px`;
+              const images = document.querySelectorAll('#image-container img');
+              let maxHeight = 0;
+      
+              // Loop through images to find the maximum height
+              images.forEach(image => {
+                  const height = image.offsetHeight;
+                  maxHeight += height + 45;
+              });
+      
+              // Set the height of the image container to the maximum height
+              const imageContainer = document.getElementById('image-container');
+              imageContainer.style.height = `${maxHeight}px`;
           }
-        
+      
           // Use setTimeout to ensure images are loaded before adjusting container height
           setTimeout(adjustImageContainerHeight, 100);
-        
+      
           // Use DOMContentLoaded to ensure script execution after HTML is fully loaded
           document.addEventListener('DOMContentLoaded', adjustImageContainerHeight);
-        </script>
+      </script>
+      
       </div>
 
       <form>
         <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
           <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
             <label for="comment" class="sr-only">Your comment</label>
-            <textarea id="comment" rows="4" class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write a comment..." required></textarea>
+            <textarea id="comment" rows="4" class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write a comment..."></textarea>
           </div>
           <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
             <div>
@@ -172,12 +142,6 @@
       <p class="ms-auto text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
     </div>
 
-<div id="includedContent" class="w-full mt-2"></div>
-  <script>
-    $(function(){
-      $("#includedContent").load("/contact.html");
-    });
-</script>
 
     
   </body>
