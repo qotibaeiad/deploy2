@@ -6,19 +6,19 @@ document.addEventListener('DOMContentLoaded', function () {
   const dropdownMenu = document.querySelector('.hs-dropdown-menu');
 
   dropdownButton.addEventListener('click', () => {
-  dropdownMenu.classList.toggle('opacity-100');
-  dropdownMenu.classList.toggle('hidden');
-  dropdownButton.querySelector('.arrow').classList.toggle('rotate-up');
+    dropdownMenu.classList.toggle('opacity-100');
+    dropdownMenu.classList.toggle('hidden');
+    arrowIcon.classList.toggle('rotate-180'); // Add or remove the class to rotate the arrow
   });
 
   dropdownMenu.addEventListener('click', (event) => {
-  if (event.target.tagName === 'A') {
-    const selectedOption = event.target.textContent.trim();
-    dropdownButton.querySelector('span').textContent = selectedOption;
-    dropdownMenu.classList.remove('opacity-100');
-    dropdownMenu.classList.add('hidden');
-    dropdownButton.querySelector('.arrow').classList.remove('rotate-up');
-  }
+    if (event.target.tagName === 'A') {
+      const selectedOption = event.target.textContent.trim();
+      dropdownButton.querySelector('span').textContent = selectedOption;
+      dropdownMenu.classList.remove('opacity-100');
+      dropdownMenu.classList.add('hidden');
+      arrowIcon.classList.remove('rotate-180'); // Reset arrow direction when dropdown is closed
+    }
   });
 
 
