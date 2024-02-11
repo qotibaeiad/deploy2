@@ -3,26 +3,24 @@ document.addEventListener('DOMContentLoaded', function () {
   const drawerClose = document.getElementById('drawerClose');
   const drawer = document.getElementById('drawer');
   const dropdownButton = document.getElementById('hs-dropdown-hover-event');
-const dropdownMenu = document.querySelector('.hs-dropdown-menu');
+  const dropdownMenu = document.querySelector('.hs-dropdown-menu');
 
-dropdownButton.addEventListener('click', () => {
+  dropdownButton.addEventListener('click', () => {
   dropdownMenu.classList.toggle('opacity-100');
   dropdownMenu.classList.toggle('hidden');
+  dropdownButton.querySelector('.arrow').classList.toggle('rotate-up');
+  });
 
-  // Toggle the rotation class for the arrow
-  dropdownButton.querySelector('.arrow').classList.toggle('rotate-180');
-});
-
-dropdownMenu.addEventListener('click', (event) => {
+  dropdownMenu.addEventListener('click', (event) => {
   if (event.target.tagName === 'A') {
     const selectedOption = event.target.textContent.trim();
     dropdownButton.querySelector('span').textContent = selectedOption;
     dropdownMenu.classList.remove('opacity-100');
     dropdownMenu.classList.add('hidden');
-    // Reset the rotation class when an item is selected
-    dropdownButton.querySelector('.arrow').classList.remove('rotate-180');
+    dropdownButton.querySelector('.arrow').classList.remove('rotate-up');
   }
-});
+  });
+
 
 
 
