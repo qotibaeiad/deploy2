@@ -3,12 +3,26 @@ document.addEventListener('DOMContentLoaded', function () {
   const drawerClose = document.getElementById('drawerClose');
   const drawer = document.getElementById('drawer');
   const dropdownButton = document.getElementById('hs-dropdown-hover-event');
-  const dropdownMenu = document.querySelector('.hs-dropdown-menu');
+const dropdownMenu = document.querySelector('.hs-dropdown-menu');
 
-  dropdownButton.addEventListener('click', () => {
-    dropdownMenu.classList.toggle('opacity-100');
-    dropdownMenu.classList.toggle('hidden');
-  });
+dropdownButton.addEventListener('click', () => {
+  dropdownMenu.classList.toggle('opacity-100');
+  dropdownMenu.classList.toggle('hidden');
+});
+
+dropdownMenu.addEventListener('click', (event) => {
+  if (event.target.tagName === 'A') {
+    const selectedOption = event.target.textContent.trim();
+    dropdownButton.textContent = selectedOption;
+
+    // If you need to perform additional actions based on the selected option, you can add your logic here.
+
+    // Close the dropdown after selection (optional)
+    dropdownMenu.classList.remove('opacity-100');
+    dropdownMenu.classList.add('hidden');
+  }
+});
+
 
 
 const HSThemeAppearance = {
