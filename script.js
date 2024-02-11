@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const isDropdownMenu = dropdownMenu.contains(event.target);
   
     if (!isDropdownButton && !isDropdownMenu) {
-      dropdownMenu.classList.toggle('hidden');
+      dropdownMenu.classList.toggle('opacity-100');
+    dropdownMenu.classList.toggle('hidden');
     }
   });
 
