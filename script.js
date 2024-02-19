@@ -128,22 +128,8 @@ function checkLogin() {
 function loadPage(page) {
   const dropdownMenu = document.querySelector('.hs-dropdown-menu');
 
-  // Always add 'hidden' and remove 'opacity-100'
   dropdownMenu.classList.add('hidden');
   dropdownMenu.classList.remove('opacity-100');
 
   window.location.href = page + '.html';
 }
-
-
-
-  // const contentContainer = document.getElementById('content-container');
-  // fetch(`${page}.html`)
-  //   .then(response => response.text())
-  //   .then(html => {
-  //     contentContainer.innerHTML = html;
-  //     if (page === 'index') {
-  //       fetchAndDisplayArticles('general'); // Fetch data for the home page
-  //     }
-  //   })
-  //   .catch(error => console.error('Error loading page:', error));
