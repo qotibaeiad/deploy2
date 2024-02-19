@@ -126,7 +126,15 @@ function checkLogin() {
 }
 
 function loadPage(page) {
-  window.location.href = page+'.html';
+  const dropdownMenu = document.querySelector('.hs-dropdown-menu');
+
+  // Always add 'hidden' and remove 'opacity-100'
+  dropdownMenu.classList.add('hidden');
+  dropdownMenu.classList.remove('opacity-100');
+
+  window.location.href = page + '.html';
+}
+
 
 
   // const contentContainer = document.getElementById('content-container');
@@ -139,4 +147,3 @@ function loadPage(page) {
   //     }
   //   })
   //   .catch(error => console.error('Error loading page:', error));
-}
