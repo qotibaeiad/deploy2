@@ -40,11 +40,11 @@ function updateStarIcon(i) {
 }
 
 function fetchAndDisplayArticles(category) {
- // document.getElementById('loadingSpinner').classList.remove('hidden');
+  document.getElementById('loadingSpinner').classList.remove('hidden');
   fetch(`https://tailwindserverweb.onrender.com/api/data?category=${category}`)
     .then(response => response.json())
     .then(data => {
-      //document.getElementById('loadingSpinner').classList.add('hidden');
+      document.getElementById('loadingSpinner').classList.add('hidden');
       const articlesContainer = document.getElementById('gridid');
 
       // Clear existing content in the container
