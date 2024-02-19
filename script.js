@@ -131,7 +131,7 @@ function loadPage(page) {
     .then(html => {
       contentContainer.innerHTML = html;
       if (page === 'index') {
-        fetchAndDisplayArticles(); // Fetch data for the home page
+        fetchAndDisplayArticles('general'); // Fetch data for the home page
       }
     })
     .catch(error => console.error('Error loading page:', error));
