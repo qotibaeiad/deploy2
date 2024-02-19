@@ -40,24 +40,24 @@ function updateStarIcon(i) {
 }
 
 function fetchAndDisplayArticles(category) {
-  document.getElementById('loadingSpinner').classList.remove('hidden');
+  var loadingSpinner = document.getElementById('loadingSpinner');
+  loadingSpinner.classList.remove('hidden');
+
   fetch(`https://tailwindserverweb.onrender.com/api/data?category=${category}`)
     .then(response => response.json())
     .then(data => {
-      document.getElementById('loadingSpinner').classList.add('hidden');
+      loadingSpinner.remove(); // Remove the loading spinner element
+
       const articlesContainer = document.getElementById('gridid');
+      articlesContainer.innerHTML = ''; // Clear existing content
 
-      // Clear existing content in the container
-      articlesContainer.innerHTML = '';
-
-      // Check if articles exist
       if (data.articles && data.articles.length > 0) {
-        checkfavorite = new Array(data.articles.length); // Creates an array with length 5, all elements are initially undefined
-        // Loop through articles and create HTML elements
+        checkfavorite = new Array(data.articles.length);
+
         data.articles.forEach((article, i) => {
           if (article.title && article.description && article.urlToImage) {
-          const articleElement = document.createElement('div');
-          articleElement.innerHTML = `
+            const articleElement = document.createElement('div');
+            articleElement.innerHTML = `
           <div class="hover:scale-90 mb-6 flex flex-wrap transform shadow-lg transition-transform duration-300 ease-in-out text-black dark:text-wight mt-16 mb-16 p-6">
             <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12">
               <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20" data-te-ripple-init data-te-ripple-color="light">
