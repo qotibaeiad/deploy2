@@ -1,19 +1,16 @@
-function fetchData() {
-  fetch('https://tailwindserverweb.onrender.com/api/data')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Network response was not ok: ${response.statusText}`);
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log('Data from server:', data);
-      // Handle the received data as needed
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
+
+function gettext(){
+  const dropdownOptions = document.querySelectorAll('.dropdown-option');
+    dropdownOptions.forEach(function (option) {
+      option.addEventListener('click', function () {
+        // Get the text content of the selected option
+        return option.textContent;
+        // Update the text content of the button with the selected value
+        // Hide the dropdown menu after selecting an option
+      });
     });
 }
+
 
 function toggleFavorite(i) {
   checkfavorite[i] = !checkfavorite[i];
@@ -105,5 +102,4 @@ function fetchAndDisplayArticles(category) {
       articlesContainer.innerHTML = '<p>Error fetching articles</p>';
     });
 }
-
-fetchAndDisplayArticles('sport');
+fetchAndDisplayArticles('global');

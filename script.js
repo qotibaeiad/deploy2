@@ -16,6 +16,7 @@ dropdownMenu.addEventListener('click', (event) => {
     dropdownButton.querySelector('span').textContent = selectedOption;
     dropdownMenu.classList.remove('opacity-100');
     dropdownMenu.classList.add('hidden');
+    fetchAndDisplayArticles(selectedOption)
   }
 });
 
