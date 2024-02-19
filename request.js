@@ -85,6 +85,7 @@ function fetchAndDisplayArticles(category) {
               </div>
             </div>
           `;
+          
           articlesContainer.appendChild(articleElement);
           updateStarIcon(i); // Update star icon initially
         }
@@ -102,4 +103,5 @@ function fetchAndDisplayArticles(category) {
       articlesContainer.innerHTML = '<p>Error fetching articles</p>';
     });
 }
+
 fetchAndDisplayArticles('general');
