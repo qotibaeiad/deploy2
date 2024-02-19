@@ -125,7 +125,7 @@ function checkLogin() {
 }
 
 function loadPage(page) {
-  fetchData()
+  // fetchData()
   $.ajax({
     url: page,
     type: 'GET',
