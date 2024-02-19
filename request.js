@@ -59,12 +59,12 @@ function fetchAndDisplayArticles() {
           if (article.title && article.description && article.urlToImage) {
           const articleElement = document.createElement('div');
           articleElement.innerHTML = `
-            <div class="hover:scale-90 mb-6 flex flex-wrap transform shadow-md transition-transform duration-300 ease-in-out text-black dark:text-wight mt-16 mb-16 p-6">
-            <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12">
-              <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-md dark:shadow-black/20" data-te-ripple-init data-te-ripple-color="light">
-                <img src="${article.urlToImage}" onclick="" class="lg:w-full" alt="Louvre" />
-              </div>
+          <div class="hover:scale-90 mb-6 flex flex-wrap transform shadow transition-transform duration-300 ease-in-out text-black dark:text-wight mt-16 mb-16 p-6">
+          <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12">
+            <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow dark:shadow-black/20" data-te-ripple-init data-te-ripple-color="light">
+              <img src="${article.urlToImage}" onclick="" class="lg:w-full" alt="Louvre" />
             </div>
+          </div>
                 
               <div class="mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-9/12 xl:w-7/12">
                 <h5 class="mb-3 text-lg font-bold text-black dark:text-white" onclick="" >${article.title}</h5>
