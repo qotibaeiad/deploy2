@@ -86,9 +86,10 @@ function fetchAndDisplayArticles() {
               </div>
             </div>
           `;
-          }
+          
           articlesContainer.appendChild(articleElement);
           updateStarIcon(i); // Update star icon initially
+        }
         });
       } else {
         // Handle case when no articles are available
