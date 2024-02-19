@@ -106,4 +106,4 @@ function fetchAndDisplayArticles(category) {
     });
 }
 
-fetchAndDisplayArticles('business');
+fetchAndDisplayArticles('sport');
