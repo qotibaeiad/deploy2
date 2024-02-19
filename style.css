@@ -8,7 +8,7 @@
 
 /* Additional styles for the grid element, adjust as needed */
 #grid:hover {
-  transform: scale3d(1.1, 1.1, 1.1); /* Example scaling on hover, adjust as needed */
+  transform: scale3d(1, 1, 1.1); /* Example scaling on hover, adjust as needed */
 }
 
 .title {
