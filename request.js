@@ -42,10 +42,11 @@ function updateStarIcon(i) {
 }
 
 function fetchAndDisplayArticles() {
+  document.getElementById('loadingSpinner').classList.remove('hidden');
   fetch('https://tailwindserverweb.onrender.com/api/data')
     .then(response => response.json())
     .then(data => {
-
+      document.getElementById('loadingSpinner').classList.add('hidden');
       const articlesContainer = document.getElementById('gridid');
 
       // Clear existing content in the container
@@ -60,12 +61,12 @@ function fetchAndDisplayArticles() {
           const articleElement = document.createElement('div');
           articleElement.innerHTML = `
           <div class="hover:scale-90 mb-6 flex flex-wrap transform shadow-lg transition-transform duration-300 ease-in-out text-black dark:text-wight mt-16 mb-16 p-6">
-  <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12">
-    <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20" data-te-ripple-init data-te-ripple-color="light">
-      <img src="${article.urlToImage}" onclick="" class="lg:w-full" alt="Louvre" />
-    </div>
-  </div>
-                
+            <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12">
+              <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20" data-te-ripple-init data-te-ripple-color="light">
+                <img src="${article.urlToImage}" onclick="" class="lg:w-full" alt="Louvre" />
+              </div>
+            </div>
+                          
               <div class="mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-9/12 xl:w-7/12">
                 <h5 class="mb-3 text-lg font-bold text-black dark:text-white" onclick="" >${article.title}</h5>
                 <div class="mb-3 flex items-center justify-center text-sm font-medium text-black dark:text-white md:justify-start">
@@ -92,6 +93,8 @@ function fetchAndDisplayArticles() {
         }
         });
       } else {
+        const articlesContainer = document.getElementById('gridid');
+
         // Handle case when no articles are available
         articlesContainer.innerHTML = '<p>No articles available</p>';
       }
