@@ -41,9 +41,9 @@ function updateStarIcon(i) {
   }
 }
 
-function fetchAndDisplayArticles() {
+function fetchAndDisplayArticles(category) {
   document.getElementById('loadingSpinner').classList.remove('hidden');
-  fetch('https://tailwindserverweb.onrender.com/api/data')
+  fetch(`https://tailwindserverweb.onrender.com/api/data?category=${category}`)
     .then(response => response.json())
     .then(data => {
       document.getElementById('loadingSpinner').classList.add('hidden');
@@ -106,4 +106,4 @@ function fetchAndDisplayArticles() {
     });
 }
 
-fetchAndDisplayArticles();
+fetchAndDisplayArticles('business');
