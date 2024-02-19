@@ -93,4 +93,4 @@ function fetchAndDisplayArticles(category) {
     });
 }
 
-fetchAndDisplayArticles('politic');
+fetchAndDisplayArticles('sport');
