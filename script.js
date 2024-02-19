@@ -130,7 +130,7 @@ function loadPage(page) {
     .then(response => response.text())
     .then(html => {
       contentContainer.innerHTML = html;
-      if (page === 'home') {
+      if (page === 'index') {
         fetchAndDisplayArticles(); // Fetch data for the home page
       }
     })
