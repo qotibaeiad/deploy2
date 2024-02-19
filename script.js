@@ -112,7 +112,6 @@ window.addEventListener('load', () => {
   drawerClose.addEventListener('click', () => {
     drawer.classList.add('hidden');
   });
-  loadPage('gridlnews.html');
 });
 
 function checkLogin() {
