@@ -16,4 +16,3 @@ function fetchData() {
 }
 
 // Call the fetchData function wherever you need to fetch the data
-fetchData();
