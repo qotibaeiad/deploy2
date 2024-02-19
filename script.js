@@ -125,18 +125,14 @@ function checkLogin() {
 }
 
 function loadPage(page) {
-  // fetchData()
-  $.ajax({
-    url: page,
-    type: 'GET',
-    success: function(data) {
-      $('#content-container').html(data);
-
-      const drawer = document.getElementById('drawer');
-      drawer.classList.add('hidden');
-    },
-    error: function() {
-      alert('Error loading page.');
-    }
-  });
+  const contentContainer = document.getElementById('content-container');
+  fetch(`${page}.html`)
+    .then(response => response.text())
+    .then(html => {
+      contentContainer.innerHTML = html;
+      if (page === 'home') {
+        fetchAndDisplayArticles(); // Fetch data for the home page
+      }
+    })
+    .catch(error => console.error('Error loading page:', error));
 }
