@@ -20,6 +20,7 @@ function toggleFavorite(i) {
   updateStarIcon(i);
 }
 
+var checkfavorite = [];
 function updateStarIcon(i) {
   // Get the star icon element
   var starIcon = document.getElementById("staricon" + i);
@@ -52,8 +53,7 @@ function fetchAndDisplayArticles() {
 
       // Check if articles exist
       if (data.articles && data.articles.length > 0) {
-        var checkfavorite = new Array(data.articles.length); // Creates an array with length 5, all elements are initially undefined
-        checkfavorite.fill(false); 
+        checkfavorite = new Array(data.articles.length); // Creates an array with length 5, all elements are initially undefined
         // Loop through articles and create HTML elements
         data.articles.forEach((article, i) => {
           const articleElement = document.createElement('div');
