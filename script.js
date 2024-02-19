@@ -125,7 +125,7 @@ function checkLogin() {
 }
 
 function loadPage(page) {
-  window.location.href = $page+'.html';
+  window.location.href = page+'.html';
 
 
   // const contentContainer = document.getElementById('content-container');
