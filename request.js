@@ -1,15 +1,15 @@
 
-function gettext(){
-  const dropdownOptions = document.querySelectorAll('.dropdown-option');
-    dropdownOptions.forEach(function (option) {
-      option.addEventListener('click', function () {
-        // Get the text content of the selected option
-        return option.textContent;
-        // Update the text content of the button with the selected value
-        // Hide the dropdown menu after selecting an option
-      });
-    });
-}
+// function gettext(){
+//   const dropdownOptions = document.querySelectorAll('.dropdown-option');
+//     dropdownOptions.forEach(function (option) {
+//       option.addEventListener('click', function () {
+//         // Get the text content of the selected option
+//         return option.textContent;
+//         // Update the text content of the button with the selected value
+//         // Hide the dropdown menu after selecting an option
+//       });
+//     });
+// }
 
 
 function toggleFavorite(i) {
@@ -102,4 +102,5 @@ function fetchAndDisplayArticles(category) {
       articlesContainer.innerHTML = '<p>Error fetching articles</p>';
     });
 }
+
 fetchAndDisplayArticles('global');
