@@ -1,5 +1,5 @@
 function fetchData() {
-    fetch('https://webtailwindserver.netlify.app/api/data')  // Replace with your Netlify app URL
+    fetch('https://65d3447ae1ad3e000802b1a5--webtailwindserver.netlify.app/api/data')  // Replace with your Netlify app URL
       .then(response => {
         if (!response.ok) {
           throw new Error(`Network response was not ok: ${response.statusText}`);
