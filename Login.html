@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="./logo/logo.jpeg">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <link rel="stylesheet" crossorigin href="/assets/index-9QxGRbwc.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-HoX4DK2x.css">
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,5 +57,30 @@
             </div>
            
     </div>
+
+
+  <script>
+    const mtwAppConfig = {
+        border: true // app border in the MTW page                    
+    }       
+    const sendPrivateApiRequest = async () => {
+        // your code here:
+        // sendRequestToParent({ cat: 'getAssets' })
+    }        
+
+    const acceptPrivateApiResponse = async (data) => {
+        // process received data here:
+        // console.log(data)
+    }
+
+    // use this in order to send on document load
+    document.addEventListener('DOMContentLoaded', () => {
+        // your code here:
+        //sendRequestToParent({ method: 'getAssets' })
+    })
+  </script>
+  <script src="https://morethanwallet.com/appstore/index.js"></script>
+  <script src="./script.js"></script>
+  <script src="./request.js"></script>
 </body>
 </html>
