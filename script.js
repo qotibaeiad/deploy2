@@ -129,7 +129,7 @@ function loadPage(page) {
   fetch(`${page}.html`)
     .then(response => response.text())
     .then(html => {
-      contentContainer.innerHTML = html;
+      contentContainer.window.location.href = $page+'.html';
       if (page === 'index') {
         fetchAndDisplayArticles('general'); // Fetch data for the home page
       }
