@@ -2,7 +2,7 @@
 // ...
 
 function fetchData() {
-    fetch('http://10.10.7.52:3000/api/data')  // Replace with your Heroku app name
+    fetch('https://webtailwindserver.netlify.app/api/data')  // Replace with your Heroku app name
       .then(response => response.json())
       .then(data => {
         console.log('Data from server:', data);
