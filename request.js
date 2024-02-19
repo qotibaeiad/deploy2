@@ -1,4 +1,25 @@
+function getSelectedValue() {
+  // Get the dropdown button element
+  var dropdownButton = document.getElementById("hs-dropdown-hover-event");
 
+  // Get the currently selected value
+  var selectedValue = dropdownButton.textContent.trim();
+
+  // Log or return the selected value
+  console.log("Selected Value: ", selectedValue);
+  // return selectedValue; // uncomment this line if you want to return the value from the function
+}
+
+// Add click event listeners to the dropdown items
+document.querySelectorAll('.hs-dropdown-menu a').forEach(function(item) {
+  item.addEventListener('click', function() {
+    // Update the dropdown button text with the selected item
+    document.getElementById("hs-dropdown-hover-event").textContent = item.textContent;
+
+    // Call the function to get the selected value
+    getSelectedValue();
+  });
+});
 
 
 
