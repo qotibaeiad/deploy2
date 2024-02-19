@@ -46,7 +46,7 @@ function fetchAndDisplayArticles() {
     .then(response => response.json())
     .then(data => {
 
-      const articlesContainer = document.getElementById('gridid');
+      const articlesContainer = document.getElementById('grid');
 
       // Clear existing content in the container
       articlesContainer.innerHTML = '';
@@ -98,7 +98,7 @@ function fetchAndDisplayArticles() {
     })
     .catch(error => {
       console.error('Error fetching data:', error);
-      const articlesContainer = document.getElementById('gridid');
+      const articlesContainer = document.getElementById('grid');
       articlesContainer.innerHTML = '<p>Error fetching articles</p>';
     });
 }
