@@ -44,6 +44,7 @@ function fetchAndDisplayArticles() {
   fetch('https://tailwindserverweb.onrender.com/api/data')
     .then(response => response.json())
     .then(data => {
+
       const articlesContainer = document.getElementById('gridid');
 
       // Clear existing content in the container
@@ -51,6 +52,8 @@ function fetchAndDisplayArticles() {
 
       // Check if articles exist
       if (data.articles && data.articles.length > 0) {
+        var checkfavorite = new Array(data.articles.length); // Creates an array with length 5, all elements are initially undefined
+        checkfavorite.fill(false); 
         // Loop through articles and create HTML elements
         data.articles.forEach((article, i) => {
           const articleElement = document.createElement('div');
