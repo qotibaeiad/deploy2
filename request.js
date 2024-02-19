@@ -56,6 +56,7 @@ function fetchAndDisplayArticles() {
         checkfavorite = new Array(data.articles.length); // Creates an array with length 5, all elements are initially undefined
         // Loop through articles and create HTML elements
         data.articles.forEach((article, i) => {
+          if (article.title && article.description && article.urlToImage) {
           const articleElement = document.createElement('div');
           articleElement.innerHTML = `
             <div  class="hover:scale-90 mb-6 flex flex-wrap transform shadow-md transition-transform duration-300 ease-in-out text-black dark:text-wight mt-16 mb-16">
@@ -85,6 +86,7 @@ function fetchAndDisplayArticles() {
               </div>
             </div>
           `;
+          }
           articlesContainer.appendChild(articleElement);
           updateStarIcon(i); // Update star icon initially
         });
