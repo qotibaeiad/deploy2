@@ -52,14 +52,6 @@ function fetchAndDisplayArticles() {
               <p class=" text-black dark:text-white">
                 ${article.description}
               </p>
-            //   <a href="#!" class="star-link">
-            //     <div id="staricon${i}" onclick="addFavorite(${i})">
-            //     <!-- Default star icon path -->
-            //     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="absolute bottom-4 right-4 h-6 w-6 text-blue-500 dark:text-white star-icon">
-            //         <path stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.308 7.426h7.383l-5.955 4.573L16.693 22 12 17.456 7.307 22l1.266-7.001L2 9.426h7.383L12 2z" />
-            //     </svg>
-            // </div>
-            // </a>
             </div>
             </div>
             
@@ -83,3 +75,13 @@ function fetchAndDisplayArticles() {
 
 // fetchData()
 // Call the fetchData function wherever you need to fetch the data
+
+
+// <a href="#!" class="star-link">
+//                 <div id="staricon${i}" onclick="addFavorite(${i})">
+//                 <!-- Default star icon path -->
+//                 <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="absolute bottom-4 right-4 h-6 w-6 text-blue-500 dark:text-white star-icon">
+//                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.308 7.426h7.383l-5.955 4.573L16.693 22 12 17.456 7.307 22l1.266-7.001L2 9.426h7.383L12 2z" />
+//                 </svg>
+//             </div>
+//             </a>
