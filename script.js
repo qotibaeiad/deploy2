@@ -14,11 +14,12 @@ dropdownMenu.addEventListener('click', (event) => {
   if (event.target.tagName === 'A') {
     const selectedOption = event.target.textContent.trim();
     dropdownButton.querySelector('span').textContent = selectedOption;
-    dropdownMenu.classList.remove('opacity-100');
+
+    // Always add 'hidden' and remove 'opacity-100'
     dropdownMenu.classList.add('hidden');
+    dropdownMenu.classList.remove('opacity-100');
   }
 });
-
 
 
 const HSThemeAppearance = {
