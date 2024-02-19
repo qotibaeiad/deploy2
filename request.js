@@ -1,13 +1,5 @@
-function fetchData(category) {
-  const variable = category;  // Replace 'yourVariableValue' with the actual value of your variable
-
-  fetch('https://tailwindserverweb.onrender.com/api/data/variable', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ category: category }),
-  })
+function fetchData() {
+  fetch('https://tailwindserverweb.onrender.com/api/data')
     .then(response => {
       if (!response.ok) {
         throw new Error(`Network response was not ok: ${response.statusText}`);
@@ -22,7 +14,6 @@ function fetchData(category) {
       console.error('Error fetching data:', error);
     });
 }
-
 
 function toggleFavorite(i) {
   checkfavorite[i] = !checkfavorite[i];
@@ -50,46 +41,25 @@ function updateStarIcon(i) {
   }
 }
 
-
-function sendDataToServer(requestData) {
-  return fetch('https://tailwindserverweb.onrender.com/api/data', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(requestData),
-  })
-  .then(response => response.json())
-  .catch(error => {
-    console.error('Error sending data to the server:', error);
-    throw error; // Propagate the error to the caller
-  });
-}
-
-function fetchAndDisplayArticles(category) {
+function fetchAndDisplayArticles() {
   document.getElementById('loadingSpinner').classList.remove('hidden');
-
-  // Assuming you have some variables to send to the server
-  const requestData = {
-    category: category,
-    
-    // Add more variables as needed
-  };
-
-  sendDataToServer(requestData)
+  fetch('https://tailwindserverweb.onrender.com/api/data')
+    .then(response => response.json())
     .then(data => {
       document.getElementById('loadingSpinner').classList.add('hidden');
       const articlesContainer = document.getElementById('gridid');
 
+      // Clear existing content in the container
       articlesContainer.innerHTML = '';
 
+      // Check if articles exist
       if (data.articles && data.articles.length > 0) {
-        checkfavorite = new Array(data.articles.length);
-
+        checkfavorite = new Array(data.articles.length); // Creates an array with length 5, all elements are initially undefined
+        // Loop through articles and create HTML elements
         data.articles.forEach((article, i) => {
           if (article.title && article.description && article.urlToImage) {
-            const articleElement = document.createElement('div');
-            articleElement.innerHTML = `
+          const articleElement = document.createElement('div');
+          articleElement.innerHTML = `
           <div class="hover:scale-90 mb-6 flex flex-wrap transform shadow-lg transition-transform duration-300 ease-in-out text-black dark:text-wight mt-16 mb-16 p-6">
             <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12">
               <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20" data-te-ripple-init data-te-ripple-color="light">
@@ -136,4 +106,4 @@ function fetchAndDisplayArticles(category) {
     });
 }
 
-fetchAndDisplayArticles('general');
+fetchAndDisplayArticles();
