@@ -1,10 +1,10 @@
 var serverurl = 'https://tailwindserverweb.onrender.com';
-let originalArticlesData = [];
 
 
 
 async function searchArticles() {
   var searchTerm = document.getElementById('default-search').value;
+  console.log(searchTerm)
   document.getElementById('loadingSpinner').classList.remove('hidden');
   fetch(serverurl + `/api/search?query=${searchTerm}`)
     .then(response => response.json())
