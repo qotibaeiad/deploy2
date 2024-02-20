@@ -1,18 +1,6 @@
 var serverurl = 'https://tailwindserverweb.onrender.com';
 let originalArticlesData = [];
-
-document.addEventListener('DOMContentLoaded', () => {
-  // your code here:
-  // sendRequestToParent({ method: 'getAssets' })
-
-  // Add an event listener for the search form
-  const searchForm = document.getElementById('searchForm');
-  searchForm.addEventListener('submit', function (event) {
-    event.preventDefault(); // prevent the default form submission behavior
-    const searchTerm = document.getElementById('default-search').value;
-    searchArticles(searchTerm);
-  });
-});
+document.addEventListener('DOMContentLoaded', function () {
 
 // search 
 
@@ -330,7 +318,5 @@ function validateForm() {
         //openInterestModal()
           }
 }}
-
-
-
+});
 fetchAndDisplayArticles('general');
