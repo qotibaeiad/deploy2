@@ -111,9 +111,11 @@ function checkUser(username, password) {
     .then(response => response.json())
     .then(data => {
       if (data.success) {
+        console.log('succes');
         return true
         // Perform actions after successful authentication (e.g., redirect, display content)
       } else {
+        console.log('not succes');
         // Authentication failed
         return false
         // Handle authentication failure (e.g., display an error message)
@@ -128,7 +130,7 @@ function checkUser(username, password) {
 function checkLogin() {
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
-  if(username==null||password==null){
+  if(username==''||password==''){
     alert('enter usernmae or password');
     return;
   }
