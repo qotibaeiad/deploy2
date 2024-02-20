@@ -129,17 +129,25 @@ async function checkUser(username, password) {
 }
 
 
-function checkLogin() {
+async function checkLogin() {
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
-  if(username==''||password==''){
-    alert('enter usernmae or password');
+
+  if (username == '' || password == '') {
+    alert('Enter username and password');
     return;
   }
-  if (checkUser(username,password)) {
-    loadPage('home')
-  } else {
-    alert('Incorrect username or password');
+
+  try {
+    const isAuthenticated = await checkUser(username, password);
+    if (isAuthenticated) {
+      loadPage('home');
+    } else {
+      alert('Incorrect username or password');
+    }
+  } catch (error) {
+    console.error('Error during login:', error);
+    alert('An error occurred during login');
   }
 }
 
