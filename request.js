@@ -8,6 +8,11 @@ async function searchArticles() {
 
   try {
     const response = await fetch(serverurl + `/api/search?query=${searchTerm}`);
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch articles. Status: ${response.status}`);
+    }
+
     const data = await response.json();
 
     document.getElementById('loadingSpinner').classList.add('hidden');
