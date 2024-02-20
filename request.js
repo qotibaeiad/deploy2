@@ -1,5 +1,6 @@
 var serverurl = 'https://tailwindserverweb.onrender.com';
 let originalArticlesData = [];
+var checkfavorite = [];
 document.addEventListener('DOMContentLoaded', function () {
   async function searchArticles(searchTerm) {
     document.getElementById('loadingSpinner').classList.remove('hidden');
@@ -80,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // return selectedValue; // uncomment this line if you want to return the value from the function
   }
   
-});
+
 // search 
 
 
@@ -92,7 +93,7 @@ function toggleFavorite(i) {
   updateStarIcon(i);
 }
 
-var checkfavorite = [];
+
 function updateStarIcon(i) {
   // Get the star icon element
   var starIcon = document.getElementById("staricon" + i);
@@ -319,6 +320,5 @@ function validateForm() {
         //openInterestModal()
           }
 }}
-
-
 fetchAndDisplayArticles('general');
+});
