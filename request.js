@@ -111,12 +111,11 @@ function checkUser(username, password) {
     .then(response => response.json())
     .then(data => {
       if (data.success) {
-        // Authentication successful
-        console.log('User authenticated:', data.message);
+        return true
         // Perform actions after successful authentication (e.g., redirect, display content)
       } else {
         // Authentication failed
-        console.log('Invalid credentials:', data.message);
+        return false
         // Handle authentication failure (e.g., display an error message)
       }
     })
@@ -129,8 +128,9 @@ function checkUser(username, password) {
 function checkLogin() {
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
-  if (username === 'abdallh' && password === '123456') {
-    window.location.href = 'index.html';
+  
+  if (checkUser(username,password)) {
+    loadPage('home')
   } else {
     alert('Incorrect username or password');
   }
