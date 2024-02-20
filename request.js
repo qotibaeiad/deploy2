@@ -104,28 +104,30 @@ function fetchAndDisplayArticles(category) {
     });
 }
 
-function checkUser(username, password) {
+async function checkUser(username, password) {
   const apiUrl = `https://tailwindserverweb.onrender.com/api/login?username=${username}&password=${password}`;
-  
-  fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        console.log('succes');
-        return true
-        // Perform actions after successful authentication (e.g., redirect, display content)
-      } else {
-        console.log('not succes');
-        // Authentication failed
-        return false
-        // Handle authentication failure (e.g., display an error message)
-      }
-    })
-    .catch(error => {
-      console.error('Error during login request:', error);
-      // Handle other errors (e.g., network issues)
-    });
+
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    if (data.success) {
+      console.log('success');
+      // Perform actions after successful authentication (e.g., redirect, display content)
+      return true;
+    } else {
+      console.log('not success');
+      // Authentication failed
+      // Handle authentication failure (e.g., display an error message)
+      return false;
+    }
+  } catch (error) {
+    console.error('Error during login request:', error);
+    // Handle other errors (e.g., network issues)
+    return false;
+  }
 }
+
 
 function checkLogin() {
   var username = document.getElementById('username').value;
