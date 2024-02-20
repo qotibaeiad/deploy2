@@ -60,6 +60,9 @@ async function searchArticles() {
 
           articlesContainer.appendChild(articleElement);
           updateStarIcon(i); // Update star icon initially
+        }else {
+          // Handle case when no articles are available
+          articlesContainer.innerHTML = `<p>No articles found for "${searchTerm}"</p>`;
         }
       });
     } else {
