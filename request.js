@@ -104,4 +104,26 @@ function fetchAndDisplayArticles(category) {
     });
 }
 
+function checkUser(username, password) {
+  const apiUrl = `https://tailwindserverweb.onrender.com/api/login?username=${username}&password=${password}`;
+  
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        // Authentication successful
+        console.log('User authenticated:', data.message);
+        // Perform actions after successful authentication (e.g., redirect, display content)
+      } else {
+        // Authentication failed
+        console.log('Invalid credentials:', data.message);
+        // Handle authentication failure (e.g., display an error message)
+      }
+    })
+    .catch(error => {
+      console.error('Error during login request:', error);
+      // Handle other errors (e.g., network issues)
+    });
+}
+
 fetchAndDisplayArticles('general');
