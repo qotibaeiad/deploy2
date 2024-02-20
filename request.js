@@ -240,7 +240,8 @@ function validateForm() {
           alert('The password does not match');
       }
       else{
-         // openInterestModal()
+        handleUserRegistration();
+        //openInterestModal()
           }
 }}
 
