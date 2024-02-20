@@ -143,4 +143,4 @@ function checkLogin() {
   }
 }
 
-//fetchAndDisplayArticles('general');
+fetchAndDisplayArticles('general');
