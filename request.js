@@ -320,4 +320,4 @@ function validateForm() {
 }}
 
 
-
+fetchAndDisplayArticles('general');
