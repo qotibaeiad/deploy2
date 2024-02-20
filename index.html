@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <meta charset="UTF-8" />
-  <link rel="icon" href="./logo/logo.jpeg">
-  <title>Bruade News</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="./logo/logo.jpeg">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-  
-  <!-- Add this to the head section of your HTML file -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-9QxGRbwc.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-HoX4DK2x.css">
 
-  <link rel="stylesheet" crossorigin href="/assets/index-9QxGRbwc.css">
-  <link rel="stylesheet" crossorigin href="/assets/index-HoX4DK2x.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styleabd.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="main.js"></script>
+    <style>
+    body {
+        background-image: url('https://www.hindustantimes.com/ht-img/img/2023/07/17/550x309/WhatsApp_Image_2021-09-18_at_09.42.18_1631944439782_1689553460678.jpeg');
+        background-size: cover; /* This property ensures that the background image covers the entire body */
+        background-position: center; /* This property centers the background image */
+        background-repeat: no-repeat; /* This property prevents the background image from repeating */
+    }
+    </style>
+
+
 </head>
 <body class="mt-16 dark:bg-gray-900 bg-white text-black dark:text-white">
+
+
+
+
   <script>
     function loadContent(url) {
         fetch(url)
@@ -56,9 +71,9 @@
 
       </div>
       <div class="hidden lg:flex space-x-4">
-        <a href="#" class="hover:text-gray-300" onclick="loadPage('index')">Home</a>
+        <a href="#" class="hover:text-gray-300" onclick="loadPage('home')">Home</a>
         <a href="#" onclick="loadPage('profile')" class="hover:text-gray-300">Profile</a>
-        <a href="#" onclick="loadPage('Login')" class="hover:text-gray-300">Login</a>
+        <a href="#" onclick="loadPage('index')" class="hover:text-gray-300">Login</a>
       </div>
 
 
@@ -109,9 +124,9 @@
       
     </div>
     <div class="flex flex-col items-center">
-      <a href="#" onclick="loadPage('index')" class="text-white py-2 hover:scale-150">Home</a>
+      <a href="#" onclick="loadPage('home')" class="text-white py-2 hover:scale-150">Home</a>
       <a href="#" onclick="loadPage('profile')"   class="text-white py-2 hover:scale-150">Profile</a>
-      <a href="#" onclick="loadPage('Login')"  class=" text-white py-2 hover:scale-150">Logout</a>
+      <a href="#" onclick="loadPage('index')"  class=" text-white py-2 hover:scale-150">Logout</a>
     </div>
     
   </div>
@@ -119,30 +134,50 @@
 
   <div>
 
-<!-- contac start -->
-<div id="content-container">
 
-  <div id="grid" class="bg-white dark:bg-gray-900 text-center md:text-left">
-    <section id="gridid" class="bg-white dark:bg-gray-900 text-center md:text-left">
 
-      <div id="loadingSpinner" class="flex items-center justify-center h-screen fixed top-0 left-0 w-full bg-gray-800 bg-opacity-75 z-50 hidden">
-        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
-      </div>
-      
-    </section>
-  </div>
-</div>
 
-<!-- <div id="includedContent" class="w-full"></div>
-  <script>
-    $(function(){
-      $("#includedContent").load("/contact.html");
-    });
-</script> -->
 
-  </div>
 
-  
+
+
+
+
+
+
+
+
+    <div class="flex justify-center items-center h-screen ">
+        <div class="w-96 p-6 shadow-lg bg-white rounded-md dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500 ">
+            <h1 class="text-3xl block text-center font-semibold text-black dark:text-white"><i class="fa-solid fa-user text-black dark:text-white "></i> Login</h1>
+            <hr class="mt-3">
+            <div class="mt-3">
+                <label for="username" class="block text-base mb-2 text-black dark:text-white">Username</label>
+                <input type="text" id="username" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600 dark:text-gray-400 " placeholder="Enter Username..." />
+            </div>
+            <div class="mt-3">
+                <label for="password" class="block text-base mb-2 text-black dark:text-white">Password</label>
+                <input type="password" id="password" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600  dark:text-gray-400 " placeholder="Enter Password..." />
+            </div>
+            <div class="mt-3 font-semibold flex justify-between items-center text-black dark:text-white">
+                <div>
+                    <input type="checkbox">
+                    <label>Remember Me</label>
+                </div>
+                <div>
+                    <a href="#" class="text-bg-gray-800 font-semibold hover:text-custom-hover text-black dark:text-white">Forgot Password?</a>
+                </div>
+            </div>
+            <div class="mt-2"> 
+                <a href="Ragister.html" class="text-bg-gray-800 font-semibold hover:text-custom-hover text-black dark:text-white">Create new account</a>
+            </div>
+            <div class="mt-5">
+                <button type="submit" onclick="checkLogin()" class="border-2 border-bg-gray-800 bg-gray-800 text-white py-1 w-full rounded-md hover:bg-transparent hover:text-gray-800 font-semibold dark:bg-gray-900 dark:text-white dark:hover:bg-gray-700" ><i class="fa-solid fa-right-to-bracket"></i>&nbsp;&nbsp;Login</button>
+            </div>
+           
+    </div>
+
+
   <script>
     const mtwAppConfig = {
         border: true // app border in the MTW page                    
