@@ -157,29 +157,42 @@ async function checkLogin() {
 
 //user ragister
 // Function to add a new user
+// Modify the addUser function in the client code
 async function addUser(username, password, email, phone, category) {
-  const apiUrl = serverurl+`/api/login?username=${username}&password=${password}`;
+  const apiUrl = serverurl + `/api/rigester`;
+
+  const userData = {
+    username,
+    password,
+    email,
+    phone,
+    category,
+  };
 
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
+    });
+
     const data = await response.json();
 
     if (data.success) {
-      console.log('rigester success');
-      // Perform actions after successful authentication (e.g., redirect, display content)
+      console.log('register success');
       return true;
     } else {
-      console.log('rigester not success');
-      // Authentication failed
-      // Handle authentication failure (e.g., display an error message)
+      console.log('register not success');
       return false;
     }
   } catch (error) {
-    console.error('Error during login request:', error);
-    // Handle other errors (e.g., network issues)
+    console.error('Error during registration request:', error);
     return false;
   }
 }
+
 
 
 
