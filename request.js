@@ -3,7 +3,8 @@ let originalArticlesData = [];
 
 
 
-async function searchArticles(searchTerm) {
+async function searchArticles() {
+  var searchTerm = document.getElementById('default-search').value;
   document.getElementById('loadingSpinner').classList.remove('hidden');
   fetch(serverurl + `/api/search?query=${searchTerm}`)
     .then(response => response.json())
