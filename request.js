@@ -4,12 +4,11 @@ var serverurl = 'https://tailwindserverweb.onrender.com';
 
 async function searchArticles() {
   var searchTerm = document.getElementById('default-search').value;
-  
   document.getElementById('loadingSpinner').classList.remove('hidden');
   fetch(serverurl + `/api/search?query=${searchTerm}`)
-  console.log(searchTerm)
     .then(response => response.json())
     .then(data => {
+      console.log(searchTerm);  // Move this line inside the 'then' block
       document.getElementById('loadingSpinner').classList.add('hidden');
       const articlesContainer = document.getElementById('gridid');
 
@@ -70,7 +69,6 @@ async function searchArticles() {
       articlesContainer.innerHTML = '<p>Error fetching articles</p>';
     });
 }
-
 
 function getSelectedValue() {
   // Get the dropdown button element
@@ -264,11 +262,6 @@ async function addUser(username, password, email, phone, category) {
     return false;
   }
 }
-
-
-
-
-
 
 async function handleUserRegistration(username, password, email, phone, category) {
   try {
