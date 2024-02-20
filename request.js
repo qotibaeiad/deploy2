@@ -43,7 +43,7 @@ function updateStarIcon(i) {
 
 function fetchAndDisplayArticles(category) {
   document.getElementById('loadingSpinner').classList.remove('hidden');
-  fetch(serverurl`/api/data?category=${category}`)
+  fetch(serverurl+`/api/data?category=${category}`)
     .then(response => response.json())
     .then(data => {
       document.getElementById('loadingSpinner').classList.add('hidden');
@@ -107,7 +107,7 @@ function fetchAndDisplayArticles(category) {
 }
 
 async function checkUser(username, password) {
-  const apiUrl = serverurl`/api/login?username=${username}&password=${password}`;
+  const apiUrl = serverurl+`/api/login?username=${username}&password=${password}`;
 
   try {
     const response = await fetch(apiUrl);
