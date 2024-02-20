@@ -8,7 +8,7 @@ async function searchArticles() {
   fetch(serverurl + `/api/search?query=${searchTerm}`)
     .then(response => response.json())
     .then(data => {
-      console.log(searchTerm);  // Move this line inside the 'then' block
+      alert(searchTerm);  // Move this line inside the 'then' block
       document.getElementById('loadingSpinner').classList.add('hidden');
       const articlesContainer = document.getElementById('gridid');
 
