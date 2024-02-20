@@ -336,5 +336,5 @@ function validateForm() {
           }
 }}
 
-searchArticles('ronaldo');
-fetchAndDisplayArticles('general');
+//searchArticles('ronaldo');
+//fetchAndDisplayArticles('general');
