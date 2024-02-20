@@ -3,7 +3,7 @@ var serverurl = 'https://tailwindserverweb.onrender.com';
 
 
 async function searchArticles() {
-  var searchTerm = document.getElementById('default-search').value;
+  var searchTerm ='messi' //document.getElementById('default-search').value;
   document.getElementById('loadingSpinner').classList.remove('hidden');
   fetch(serverurl + `/api/search?query=${searchTerm}`)
     .then(response => response.json())
@@ -335,5 +335,5 @@ function validateForm() {
           }
 }}
 
-
-fetchAndDisplayArticles('general');
+searchArticles();
+//fetchAndDisplayArticles('general');
