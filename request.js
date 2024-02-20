@@ -1,4 +1,5 @@
 var serverurl = 'https://tailwindserverweb.onrender.com';
+var hasFetchedArticles = false;
 
 
 
@@ -335,5 +336,8 @@ function validateForm() {
           }
 }}
 
-searchArticles();
-//fetchAndDisplayArticles('general');
+
+if (!hasFetchedArticles) {
+  fetchAndDisplayArticles('general');
+  hasFetchedArticles = true;
+}
