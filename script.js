@@ -19,6 +19,15 @@ dropdownMenu.addEventListener('click', (event) => {
     dropdownMenu.classList.add('hidden');
     dropdownMenu.classList.remove('opacity-100');
   }
+
+
+  const searchForm = document.getElementById('searchForm');
+  searchForm.addEventListener('submit', function (event) {
+    event.preventDefault(); // prevent the default form submission behavior
+    const searchTerm = document.getElementById('default-search').value;
+    searchArticles(searchTerm);
+  });
+
 });
 
 
