@@ -1,4 +1,6 @@
 var serverurl = 'https://tailwindserverweb.onrender.com';
+var searchSuggestions = [];
+
 
 function getSelectedValue() {
   // Get the dropdown button element
@@ -246,5 +248,53 @@ function validateForm() {
         //openInterestModal()
           }
 }}
+
+
+//search bar
+
+function initSearchSuggestions() {
+  var searchInput = document.getElementById('default-search');
+  autocomplete(searchInput, searchSuggestions);
+}
+
+function autocomplete(input, suggestions) {
+  input.addEventListener('input', function () {
+    var currentInput = input.value.toLowerCase();
+    var matches = suggestions.filter(suggestion =>
+      suggestion.toLowerCase().includes(currentInput)
+    );
+
+    displaySuggestions(matches);
+  });
+}
+
+function displaySuggestions(matches) {
+  var existingContainer = document.getElementById('suggestion-container');
+  if (existingContainer) {
+    existingContainer.parentNode.removeChild(existingContainer);
+  }
+
+  var suggestionContainer = document.createElement('div');
+  suggestionContainer.id = 'suggestion-container';
+  suggestionContainer.classList.add('suggestion-container');
+
+  if (matches.length > 0) {
+    matches.forEach(match => {
+      var suggestionItem = document.createElement('div');
+      suggestionItem.classList.add('suggestion-item');
+      suggestionItem.textContent = match;
+
+      suggestionItem.addEventListener('click', function () {
+        document.getElementById('default-search').value = match;
+        suggestionContainer.innerHTML = '';
+      });
+
+      suggestionContainer.appendChild(suggestionItem);
+    });
+  }
+
+  var searchInput = document.getElementById('default-search');
+  searchInput.parentNode.appendChild(suggestionContainer);
+}
 
 fetchAndDisplayArticles('general');
