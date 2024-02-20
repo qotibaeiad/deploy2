@@ -229,7 +229,7 @@ async function checkLogin() {
 // Function to add a new user
 // Modify the addUser function in the client code
 async function addUser(username, password, email, phone, category) {
-  const apiUrl = serverurl + `/api/rigester`;
+  const apiUrl = serverurl + `/api/register`;
 
   const userData = {
     username,
