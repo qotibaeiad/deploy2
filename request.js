@@ -2,7 +2,8 @@ var serverurl = 'https://tailwindserverweb.onrender.com';
 
 
 
-async function searchArticles() {
+async function searchArticles(event) {
+  event.preventDefault(); 
   var searchTerm = document.getElementById('default-search').value;
   document.getElementById('loadingSpinner').classList.remove('hidden');
 
