@@ -128,7 +128,10 @@ function checkUser(username, password) {
 function checkLogin() {
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
-  
+  if(username==null||password==null){
+    alert('Incorrect username or password');
+    return;
+  }
   if (checkUser(username,password)) {
     loadPage('home')
   } else {
