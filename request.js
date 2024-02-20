@@ -153,4 +153,95 @@ async function checkLogin() {
   }
 }
 
+
+
+//user ragister
+// Function to add a new user
+async function addUser(username, password, email, phone, category) {
+  const apiUrl = serverurl + '/api/addUser';
+
+  // Create a FormData object to send the data as a form
+  const formData = new FormData();
+  formData.append('username', username);
+  formData.append('password', password);
+  formData.append('email', email);
+  formData.append('phone', phone);
+  formData.append('category', category);
+
+  try {
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      console.log('User added successfully');
+      // Perform actions after successful user registration
+      return true;
+    } else {
+      console.log('User registration failed');
+      // Handle user registration failure (e.g., display an error message)
+      return false;
+    }
+  } catch (error) {
+    console.error('Error during user registration request:', error);
+    // Handle other errors (e.g., network issues)
+    return false;
+  }
+}
+
+
+
+
+
+async function handleUserRegistration() {
+  try {
+    const isUserAdded = await addUser(username, password, email, phone, category);
+    if (isUserAdded) {
+      alert('User registered successfully');
+      // Additional actions after successful registration (e.g., redirect)
+    } else {
+      alert('User registration failed');
+    }
+  } catch (error) {
+    console.error('Error during user registration:', error);
+    alert('An error occurred during user registration');
+  }
+}
+
+function openInterestModal() {
+  document.getElementById('interestModal').classList.remove('hidden');
+}
+
+function closeInterestModal() {
+  document.getElementById('interestModal').classList.add('hidden');
+  window.location.href = 'index.html';            
+}
+
+function toggleCategory(containerId) {
+  const categoryContainer = document.getElementById(containerId);
+  categoryContainer.classList.toggle('selected-category');
+}
+
+function validateForm() {
+  var username = document.getElementById('username').value;
+  var email = document.getElementById('email').value;
+  var phone = document.getElementById('phone').value;
+  var password = document.getElementById('password').value;
+  var confirmPassword = document.getElementById('confirmPassword').value;
+  var country = document.getElementById('country').value;
+
+  if (username === '' || email === '' || phone === '' || password === '' || confirmPassword === '' === '' || confirmPassword === '' || country === '') {
+      alert('Please fill in all fields.');
+  } else {
+      if(password != confirmPassword ){
+          alert('The password does not match');
+      }
+      else{
+         // openInterestModal()
+          }
+}}
+
 fetchAndDisplayArticles('general');
