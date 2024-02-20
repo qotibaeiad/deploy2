@@ -3,10 +3,10 @@ var hasFetchedArticles = false;
 
 
 
-async function searchArticles() {
-  var searchTerm ='messi' //document.getElementById('default-search').value;
+async function searchArticles(search) {
+  //var searchTerm = //document.getElementById('default-search').value;
   document.getElementById('loadingSpinner').classList.remove('hidden');
-  fetch(serverurl + `/api/search?query=${searchTerm}`)
+  fetch(serverurl + `/api/search?query=${search}`)
     .then(response => response.json())
     .then(data => {
       document.getElementById('loadingSpinner').classList.add('hidden');
@@ -336,8 +336,5 @@ function validateForm() {
           }
 }}
 
-
-if (!hasFetchedArticles) {
-  fetchAndDisplayArticles('general');
-  hasFetchedArticles = true;
-}
+searchArticles('ronaldo');
+fetchAndDisplayArticles('general');
