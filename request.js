@@ -1,3 +1,5 @@
+var serverurl = 'https://tailwindserverweb.onrender.com';
+
 function getSelectedValue() {
   // Get the dropdown button element
   var dropdownButton = document.getElementById("hs-dropdown-hover-event");
@@ -41,7 +43,7 @@ function updateStarIcon(i) {
 
 function fetchAndDisplayArticles(category) {
   document.getElementById('loadingSpinner').classList.remove('hidden');
-  fetch(`https://tailwindserverweb.onrender.com/api/data?category=${category}`)
+  fetch(serverurl`/api/data?category=${category}`)
     .then(response => response.json())
     .then(data => {
       document.getElementById('loadingSpinner').classList.add('hidden');
@@ -105,7 +107,7 @@ function fetchAndDisplayArticles(category) {
 }
 
 async function checkUser(username, password) {
-  const apiUrl = `https://tailwindserverweb.onrender.com/api/login?username=${username}&password=${password}`;
+  const apiUrl = serverurl`/api/login?username=${username}&password=${password}`;
 
   try {
     const response = await fetch(apiUrl);
