@@ -5,29 +5,21 @@ var serverurl = 'https://tailwindserverweb.onrender.com';
 async function searchArticles() {
   var searchTerm = document.getElementById('default-search').value;
   document.getElementById('loadingSpinner').classList.remove('hidden');
+  fetch(serverurl + `/api/search?query=${searchTerm}`)
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('loadingSpinner').classList.add('hidden');
+      const articlesContainer = document.getElementById('gridid');
 
-  try {
-    const response = await fetch(serverurl + `/api/search?query=${searchTerm}`);
+      // Clear existing content in the container
+      articlesContainer.innerHTML = '';
 
-    if (!response.ok) {
-      throw new Error(`Failed to fetch articles. Status: ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    document.getElementById('loadingSpinner').classList.add('hidden');
-    const articlesContainer = document.getElementById('gridid');
-
-    // Clear existing content in the container
-    articlesContainer.innerHTML = '';
-
-    // Check if articles exist
-    if (data.articles && data.articles.length > 0) {
-      checkfavorite = new Array(data.articles.length);
-
-      // Loop through articles and create HTML elements
-      data.articles.forEach((article, i) => {
-        if (article.title && article.description && article.urlToImage) {
+      // Check if articles exist
+      if (data.articles && data.articles.length > 0) {
+        checkfavorite = new Array(data.articles.length); // Creates an array with length 5, all elements are initially undefined
+        // Loop through articles and create HTML elements
+        data.articles.forEach((article, i) => {
+          if (article.title && article.description && article.urlToImage) {
           const articleElement = document.createElement('div');
           articleElement.innerHTML = `
           <div class="hover:scale-90 mb-6 flex flex-wrap transform shadow-lg transition-transform duration-300 ease-in-out text-black dark:text-wight mt-16 mb-16 p-6">
@@ -57,24 +49,47 @@ async function searchArticles() {
               </div>
             </div>
           `;
-
+          
           articlesContainer.appendChild(articleElement);
           updateStarIcon(i); // Update star icon initially
-        }else {
-          // Handle case when no articles are available
-          articlesContainer.innerHTML = `<p>No articles found for "${searchTerm}"</p>`;
         }
-      });
-    } else {
-      const articlesContainer = document.getElementById('gridid');
+        });
+      } else {
+        const articlesContainer = document.getElementById('gridid');
 
-      // Handle case when no articles are available
-      articlesContainer.innerHTML = `<p>No articles found for "${searchTerm}"</p>`;
+        // Handle case when no articles are available
+        articlesContainer.innerHTML = '<p>No articles available</p>';
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+      const articlesContainer = document.getElementById('gridid');
+      articlesContainer.innerHTML = '<p>Error fetching articles</p>';
+    });
+}
+
+async function checkUser(username, password) {
+  const apiUrl = serverurl+`/api/login?username=${username}&password=${password}`;
+
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    if (data.success) {
+
+      console.log('success');
+      // Perform actions after successful authentication (e.g., redirect, display content)
+      return true;
+    } else {
+      console.log('not success');
+      // Authentication failed
+      // Handle authentication failure (e.g., display an error message)
+      return false;
     }
   } catch (error) {
-    console.error('Error fetching data:', error);
-    const articlesContainer = document.getElementById('gridid');
-    articlesContainer.innerHTML = '<p>Error fetching articles</p>';
+    console.error('Error during login request:', error);
+    // Handle other errors (e.g., network issues)
+    return false;
   }
 }
 
