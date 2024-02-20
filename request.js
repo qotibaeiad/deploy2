@@ -196,7 +196,7 @@ async function addUser(username, password, email, phone, category) {
 
 
 
-async function handleUserRegistration() {
+async function handleUserRegistration(username, password, email, phone, category) {
   try {
     const isUserAdded = await addUser(username, password, email, phone, category);
     if (isUserAdded) {
@@ -240,7 +240,7 @@ function validateForm() {
           alert('The password does not match');
       }
       else{
-        handleUserRegistration();
+        handleUserRegistration(username,password,email,phone,'global');
         //openInterestModal()
           }
 }}
