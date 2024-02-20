@@ -5,10 +5,11 @@ var serverurl = 'https://tailwindserverweb.onrender.com';
 async function searchArticles() {
   var searchTerm = document.getElementById('default-search').value;
   document.getElementById('loadingSpinner').classList.remove('hidden');
+  alert(searchTerm); 
   fetch(serverurl + `/api/search?query=${searchTerm}`)
     .then(response => response.json())
     .then(data => {
-      alert(searchTerm);  // Move this line inside the 'then' block
+       // Move this line inside the 'then' block
       document.getElementById('loadingSpinner').classList.add('hidden');
       const articlesContainer = document.getElementById('gridid');
 
