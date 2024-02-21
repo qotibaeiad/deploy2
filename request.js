@@ -9,11 +9,11 @@ function changeContentInMyDiv() {
 
 async function searchArticles() {
   var searchTerm = document.getElementById('default-search').value;
-  document.getElementById('loadingSpinner').classList.toggle('hidden');
+  //document.getElementById('loadingSpinner').classList.toggle('hidden');
   fetch(serverurl + `/api/search?query=${searchTerm}`)
     .then(response => response.json())
     .then(data => {
-      document.getElementById('loadingSpinner').classList.toggle('hidden');
+      //document.getElementById('loadingSpinner').classList.toggle('hidden');
       const articlesContainer = document.getElementById('gridid');
 
       // Clear existing content in the container
