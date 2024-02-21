@@ -7,9 +7,6 @@ function changeContentInMyDiv() {
 }
 
 
-document.getElementById('searchbutton').addEventListener('click', async (e)=>{
-  searchArticles();
-});
 
 async function searchArticles() {
 
@@ -80,6 +77,9 @@ async function searchArticles() {
       articlesContainer.innerHTML = '<p>Error fetching articles</p>';
     });
 }
+
+document.getElementById('searchbutton').addEventListener('click',searchArticles);
+
 
 async function checkUser(username, password) {
   const apiUrl = serverurl+`/api/login?username=${username}&password=${password}`;
