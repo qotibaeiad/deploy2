@@ -1,6 +1,8 @@
 var serverurl = 'https://tailwindserverweb.onrender.com';
 var hasFetchedArticles = false;
 
+const spin = document.getElementById('searchbutton');
+
 function changeContentInMyDiv() {
   const myDiv = document.getElementById('myDiv');
   myDiv.innerHTML = 'New content for myDiv';
@@ -11,7 +13,7 @@ function changeContentInMyDiv() {
 async function searchArticles() {
 
   var searchTerm = document.getElementById('default-search').value;
-  document.getElementById('loadingSpinner').classList.remove('hidden');
+  spin.classList.remove('hidden');
   fetch(serverurl + `/api/search?query=${searchTerm}`)
     .then(response => response.json())
     .then(data => {
