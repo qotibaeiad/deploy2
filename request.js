@@ -7,7 +7,12 @@ function changeContentInMyDiv() {
 }
 
 
+document.getElementById('searchbutton').addEventListener('click', async (e)=>{
+  searchArticles();
+});
+
 async function searchArticles() {
+
   var searchTerm = document.getElementById('default-search').value;
   document.getElementById('loadingSpinner').classList.remove('hidden');
   fetch(serverurl + `/api/search?query=${searchTerm}`)
