@@ -1,6 +1,6 @@
 var serverurl = 'https://tailwindserverweb.onrender.com';
 var hasFetchedArticles = false;
-
+const articshow = []
 const spin = document.getElementById('loadingSpinner');
 
 function changeContentInMyDiv() {
@@ -24,13 +24,14 @@ async function searchArticles() {
     //  <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
     //  </div>
     articlesContainer.innerHTML = ``;
-
+    
       // Check if articles exist
       if (data.articles && data.articles.length > 0) {
         checkfavorite = new Array(data.articles.length); // Creates an array with length 5, all elements are initially undefined
         // Loop through articles and create HTML elements
         data.articles.forEach((article, i) => {
           if (article.title && article.description && article.urlToImage) {
+            articshow.appendChild(article);
           const articleElement = document.createElement('div');
           articleElement.innerHTML = `
           <div class="hover:scale-90 mb-6 flex flex-wrap transform shadow-lg transition-transform duration-300 ease-in-out text-black dark:text-wight mt-16 mb-16 p-6">
@@ -172,7 +173,7 @@ function fetchAndDisplayArticles(category) {
           <div class="hover:scale-90 mb-6 flex flex-wrap transform shadow-lg transition-transform duration-300 ease-in-out text-black dark:text-wight mt-16 mb-16 p-6">
             <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12">
               <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20" data-te-ripple-init data-te-ripple-color="light">
-                <img src="${article.urlToImage}" onclick="" class="lg:w-full" alt="Louvre" />
+                <img src="${article.urlToImage}" onclick="openarticl(i)" class="lg:w-full" alt="Louvre" />
               </div>
             </div>
                           
@@ -188,7 +189,7 @@ function fetchAndDisplayArticles(category) {
                   <small>Published <u>${article.publishedAt}</u></small>
                 </p>
                 <p class="text-black dark:text-white">
-                  ${article.content}
+                  ${article.description}
                 </p>
                 <a href="#!" class="star-link" id="starlink${i}" onclick="toggleFavorite(${i})">
                   <div id="staricon${i}" class="star-icon"></div>
@@ -214,6 +215,10 @@ function fetchAndDisplayArticles(category) {
       articlesContainer.innerHTML = '<p>Error fetching articles</p>';
     });
 }
+
+
+
+
 
 async function checkUser(username, password) {
   const apiUrl = serverurl+`/api/login?username=${username}&password=${password}`;
@@ -357,3 +362,7 @@ function validateForm() {
 //searchArticles('messi');
 fetchAndDisplayArticles('general');
 //fetchAndDisplayArticles('general');
+
+function openarticl(index){
+  print(index);
+}
