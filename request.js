@@ -1,7 +1,7 @@
 var serverurl = 'https://tailwindserverweb.onrender.com';
 var hasFetchedArticles = false;
 
-const spin = document.getElementById('searchbutton');
+const spin = document.getElementById('loadingSpinner');
 
 function changeContentInMyDiv() {
   const myDiv = document.getElementById('myDiv');
@@ -17,7 +17,7 @@ async function searchArticles() {
   fetch(serverurl + `/api/search?query=${searchTerm}`)
     .then(response => response.json())
     .then(data => {
-      //document.getElementById('loadingSpinner').classList.toggle('hidden');
+      spin.classList.add('hidden');
      const articlesContainer = document.getElementById('gridid');
     //  <div id="loadingSpinner" class="flex items-center justify-center h-screen fixed top-0 left-0 w-full bg-gray-800 bg-opacity-75 z-50 hidden">
     //  <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
@@ -149,11 +149,11 @@ function updateStarIcon(i) {
 }
 
 function fetchAndDisplayArticles(category) {
-  spin.classList.remove('hidden');
+  document.getElementById('loadingSpinner').classList.remove('hidden');
   fetch(serverurl+`/api/data?category=${category}`)
     .then(response => response.json())
     .then(data => {
-      spin.classList.add('hidden');
+      document.getElementById('loadingSpinner').classList.add('hidden');
       const articlesContainer = document.getElementById('gridid');
 
       // Clear existing content in the container
