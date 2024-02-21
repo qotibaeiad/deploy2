@@ -337,6 +337,6 @@ function validateForm() {
           }
 }}
 
-searchArticles('ronaldo');
+searchArticles('messi');
 //fetchAndDisplayArticles('general');
 //fetchAndDisplayArticles('general');
