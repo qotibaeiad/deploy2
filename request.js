@@ -32,7 +32,7 @@ async function searchArticles() {
         // Loop through articles and create HTML elements
         data.articles.forEach((article, i) => {
           if (article.title && article.description && article.urlToImage) {
-            articshow.appendChild(article);
+            
           const articleElement = document.createElement('div');
           articleElement.innerHTML = `
           <div class="hover:scale-90 mb-6 flex flex-wrap transform shadow-lg transition-transform duration-300 ease-in-out text-black dark:text-wight mt-16 mb-16 p-6">
@@ -168,6 +168,7 @@ function fetchAndDisplayArticles(category) {
         // Loop through articles and create HTML elements
         data.articles.forEach((article, i) => {
           if (article.title && article.description && article.urlToImage) {
+            articshow.push(article);
           const articleElement = document.createElement('div');
           articleElement.innerHTML = `
           <div class="hover:scale-90 mb-6 flex flex-wrap transform shadow-lg transition-transform duration-300 ease-in-out text-black dark:text-wight mt-16 mb-16 p-6">
