@@ -339,3 +339,4 @@ function validateForm() {
 
 //searchArticles('ronaldo');
 //fetchAndDisplayArticles('general');
+fetchAndDisplayArticles('general');

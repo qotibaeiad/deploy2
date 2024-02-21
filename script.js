@@ -133,9 +133,7 @@ function loadPage(page) {
   dropdownMenu.classList.remove('opacity-100');
 
   window.location.href = page + '.html';
-  if(page=='home'){
-    fetchAndDisplayArticles('general')
-  }
+
 
   //searchArticles('ronaldo');
   //fetchAndDisplayArticles('general');
