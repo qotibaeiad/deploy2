@@ -4,9 +4,9 @@ var hasFetchedArticles = false;
 
 
 async function searchArticles(search) {
-  //var searchTerm = //document.getElementById('default-search').value;
+  var searchTerm = //document.getElementById('default-search').value;
   document.getElementById('loadingSpinner').classList.remove('hidden');
-  fetch(serverurl + `/api/search?query=${search}`)
+  fetch(serverurl + `/api/search?query=${searchTerm}`)
     .then(response => response.json())
     .then(data => {
       document.getElementById('loadingSpinner').classList.add('hidden');
