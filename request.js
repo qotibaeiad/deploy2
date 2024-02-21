@@ -242,8 +242,8 @@ async function checkLogin() {
       alert('Incorrect username or password');
     }
   } catch (error) {
-    console.error('Error during login:', error);
-    alert('An error occurred during login');
+    //console.error('Error during login:', error);
+    //alert('An error occurred during login');
   }
 }
 
