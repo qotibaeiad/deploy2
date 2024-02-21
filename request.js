@@ -14,6 +14,7 @@ async function searchArticles() {
 
   var searchTerm = document.getElementById('default-search').value;
   spin.classList.remove('hidden');
+  console.log(spin);
   fetch(serverurl + `/api/search?query=${searchTerm}`)
     .then(response => response.json())
     .then(data => {
