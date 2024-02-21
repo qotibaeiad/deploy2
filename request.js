@@ -1,6 +1,7 @@
 var serverurl = 'https://tailwindserverweb.onrender.com';
 var hasFetchedArticles = false;
 const articshow = []
+let indexarticle;
 const spin = document.getElementById('loadingSpinner');
 
 function changeContentInMyDiv() {
@@ -358,10 +359,12 @@ function validateForm() {
 }}
 
 
-//searchArticles('messi');
 fetchAndDisplayArticles('general');
-//fetchAndDisplayArticles('general');
 
-function openarticl(index){
-  print(index);
+function openarticl(index) {
+  indexarticle = index;
+  // Save the articshow array to localStorage
+  localStorage.setItem('articshow', JSON.stringify(articshow));
+  // Navigate to the new.html page
+  window.location.href = 'new.html?index=' + index;
 }

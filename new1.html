@@ -152,5 +152,23 @@
       </aside>
       <p class="ms-auto text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
     </div>
+    <script>
+          document.addEventListener('DOMContentLoaded', function () {
+              const params = new URLSearchParams(window.location.search);
+              const index = params.get('index');
+
+              // Retrieve the articshow array from localStorage
+              const articshow = JSON.parse(localStorage.getItem('articshow'));
+
+              // Use the index and articshow array to fetch and display the content
+              if (index !== null && articshow !== null) {
+                const selectedArticle = articshow[index];
+                // Display the content of the selected article on the new.html page
+                // Example: displayArticleContent(selectedArticle);
+              } else {
+                console.error('Index or articshow not provided in the URL');
+              }
+          });
+    </script>
   </body>
 </html>
