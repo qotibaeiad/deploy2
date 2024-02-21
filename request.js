@@ -9,15 +9,16 @@ function changeContentInMyDiv() {
 
 async function searchArticles() {
   var searchTerm = document.getElementById('default-search').value;
-  //document.getElementById('loadingSpinner').classList.toggle('hidden');
+  document.getElementById('loadingSpinner').classList.remove('hidden');
   fetch(serverurl + `/api/search?query=${searchTerm}`)
     .then(response => response.json())
     .then(data => {
       //document.getElementById('loadingSpinner').classList.toggle('hidden');
-      const articlesContainer = document.getElementById('gridid');
-
-      // Clear existing content in the container
-      articlesContainer.innerHTML = '';
+     const articlesContainer = document.getElementById('gridid');
+    //  <div id="loadingSpinner" class="flex items-center justify-center h-screen fixed top-0 left-0 w-full bg-gray-800 bg-opacity-75 z-50 hidden">
+    //  <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+    //  </div>
+    articlesContainer.innerHTML = ``;
 
       // Check if articles exist
       if (data.articles && data.articles.length > 0) {
@@ -57,6 +58,8 @@ async function searchArticles() {
           
           articlesContainer.appendChild(articleElement);
           updateStarIcon(i); // Update star icon initially
+          document.getElementById('loadingSpinner').classList.add('hidden');
+
         }
         });
       } else {
