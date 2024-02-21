@@ -14,12 +14,6 @@ async function searchArticles() {
 
   var searchTerm = document.getElementById('default-search').value;
   spin.classList.remove('hidden');
-  // Adding a delay of 2 seconds (2000 milliseconds)
-setTimeout(() => {
-  // Your code to be executed after the delay
-  // For example, additional actions after the delay
-  console.log('This code runs after a 2-second delay');
-}, 2000);
   fetch(serverurl + `/api/search?query=${searchTerm}`)
     .then(response => response.json())
     .then(data => {
