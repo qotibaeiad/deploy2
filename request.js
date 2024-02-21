@@ -165,7 +165,6 @@ function fetchAndDisplayArticles(category) {
       // Check if articles exist
       if (data.articles && data.articles.length > 0) {
         checkfavorite = new Array(data.articles.length); // Creates an array with length 5, all elements are initially undefined
-        // Loop through articles and create HTML elements
         data.articles.forEach((article, i) => {
           if (article.title && article.description && article.urlToImage) {
             articshow.push(article);
