@@ -237,8 +237,8 @@ async function checkLogin() {
   try {
     const isAuthenticated = await checkUser(username, password);
     if (isAuthenticated) {
-      fetchAndDisplayArticles('general');
       loadPage('home');
+      fetchAndDisplayArticles('general');
     } else {
       alert('Incorrect username or password');
     }
