@@ -62,7 +62,7 @@ async function searchArticles() {
           
           articlesContainer.appendChild(articleElement);
           updateStarIcon(i); // Update star icon initially
-          document.getElementById('loadingSpinner').classList.add('hidden');
+          spin.classList.add('hidden');
 
         }
         });
@@ -149,11 +149,11 @@ function updateStarIcon(i) {
 }
 
 function fetchAndDisplayArticles(category) {
-  document.getElementById('loadingSpinner').classList.remove('hidden');
+  spin.classList.remove('hidden');
   fetch(serverurl+`/api/data?category=${category}`)
     .then(response => response.json())
     .then(data => {
-      document.getElementById('loadingSpinner').classList.add('hidden');
+      spin.classList.add('hidden');
       const articlesContainer = document.getElementById('gridid');
 
       // Clear existing content in the container
