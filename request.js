@@ -13,7 +13,7 @@ async function searchArticles() {
   fetch(serverurl + `/api/search?query=${searchTerm}`)
     .then(response => response.json())
     .then(data => {
-      document.getElementById('loadingSpinner').classList.add('hidden');
+      document.getElementById('loadingSpinner').classList.toggle('hidden');
       const articlesContainer = document.getElementById('gridid');
 
       // Clear existing content in the container
