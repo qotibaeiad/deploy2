@@ -7,10 +7,10 @@ function changeContentInMyDiv() {
 }
 
 
-async function searchArticles(search) {
+async function searchArticles() {
   var searchTerm = document.getElementById('default-search').value;
   document.getElementById('loadingSpinner').classList.remove('hidden');
-  fetch(serverurl + `/api/search?query=${search}`)
+  fetch(serverurl + `/api/search?query=${searchArticles}`)
     .then(response => response.json())
     .then(data => {
       document.getElementById('loadingSpinner').classList.add('hidden');
@@ -342,6 +342,6 @@ function validateForm() {
 }}
 
 
-searchArticles('messi');
-//fetchAndDisplayArticles('general');
+//searchArticles('messi');
+fetchAndDisplayArticles('general');
 //fetchAndDisplayArticles('general');
