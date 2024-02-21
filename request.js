@@ -168,7 +168,6 @@ function fetchAndDisplayArticles(category) {
         data.articles.forEach((article, i) => {
           if (article.title && article.description && article.urlToImage) {
           const articleElement = document.createElement('div');
-          console.log(article.content);
           articleElement.innerHTML = `
           <div class="hover:scale-90 mb-6 flex flex-wrap transform shadow-lg transition-transform duration-300 ease-in-out text-black dark:text-wight mt-16 mb-16 p-6">
             <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12">
