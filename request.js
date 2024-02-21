@@ -9,7 +9,7 @@ function changeContentInMyDiv() {
 
 async function searchArticles() {
   var searchTerm = document.getElementById('default-search').value;
-  document.getElementById('loadingSpinner').classList.remove('hidden');
+  document.getElementById('loadingSpinner').classList.toggle('hidden');
   fetch(serverurl + `/api/search?query=${searchTerm}`)
     .then(response => response.json())
     .then(data => {
