@@ -1,6 +1,10 @@
 var serverurl = 'https://tailwindserverweb.onrender.com';
 var hasFetchedArticles = false;
 
+function changeContentInMyDiv() {
+  const myDiv = document.getElementById('myDiv');
+  myDiv.innerHTML = 'New content for myDiv';
+}
 
 
 async function searchArticles(search) {
@@ -336,6 +340,7 @@ function validateForm() {
         //openInterestModal()
           }
 }}
+
 
 searchArticles('messi');
 //fetchAndDisplayArticles('general');
