@@ -238,7 +238,7 @@ async function checkLogin() {
     const isAuthenticated = await checkUser(username, password);
     if (isAuthenticated) {
       loadPage('home');
-      fetchAndDisplayArticles('general');
+      
     } else {
       alert('Incorrect username or password');
     }
@@ -338,4 +338,4 @@ function validateForm() {
 }}
 
 //searchArticles('ronaldo');
-
+fetchAndDisplayArticles('general');

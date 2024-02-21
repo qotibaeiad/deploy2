@@ -135,5 +135,5 @@ function loadPage(page) {
   window.location.href = page + '.html';
 
   //searchArticles('ronaldo');
-  fetchAndDisplayArticles('general');
+  //fetchAndDisplayArticles('general');
 }
