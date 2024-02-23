@@ -21,24 +21,26 @@
             
               <script>
                 document.addEventListener('DOMContentLoaded', function () {
-                    const params = new URLSearchParams(window.location.search);
-                    const index = params.get('index');
-      
-                    // Retrieve the articshow array from localStorage
-                    const articshow = JSON.parse(localStorage.getItem('articshow'));
-      
-                    // Use the index and articshow array to fetch and display the content
-                    if (index !== null && articshow !== null) {
-                      const selectedArticle = articshow[index];
-                      <p class="font-serif text-base pb-5">selectedArticle.content</p>
-
-                      // Display the content of the selected article on the new.html page
-                      // Example: displayArticleContent(selectedArticle);
-                    } else {
-                      console.error('Index or articshow not provided in the URL');
-                    }
+                  const params = new URLSearchParams(window.location.search);
+                  const index = params.get('index');
+              
+                  // Retrieve the articshow array from localStorage
+                  const articshow = JSON.parse(localStorage.getItem('articshow'));
+              
+                  // Use the index and articshow array to fetch and display the content
+                  if (index !== null && articshow !== null) {
+                    const selectedArticle = articshow[index];
+                    
+                    // Use innerHTML to set the content of the <p> tag
+                    document.querySelector('.font-serif.text-base.pb-5').innerHTML = selectedArticle.content;
+              
+                    // Display the content of the selected article on the new.html page
+                    // Example: displayArticleContent(selectedArticle);
+                  } else {
+                    console.error('Index or articshow not provided in the URL');
+                  }
                 });
-          </script>
+              </script>
             
             </p>
             <!-- <p class="font-serif text-base pb-5">The rookie Republican leader – already struggling to wield a tiny, extreme and malfunctioning majority – suffered a spectacular embarrassment on Tuesday night in a failed vote to impeach Homeland Security Secretary Alejandro Mayorkas.</p>
