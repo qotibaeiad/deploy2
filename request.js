@@ -190,7 +190,7 @@ function fetchAndDisplayArticles(category) {
                   <small>Published <u>${article.publishedAt}</u></small>
                 </p>
                 <p class="text-black dark:text-white">
-                  ${article.content}
+                  ${article.description}
                 </p>
                 <a href="#!" class="star-link" id="starlink${i}" onclick="toggleFavorite(${i})">
                   <div id="staricon${i}" class="star-icon"></div>
