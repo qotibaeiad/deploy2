@@ -17,8 +17,31 @@
               <p class="text-sm dark:text-white text-gray-600 italic py-2">Analysis by Stephen Collinson, CNN</p>
               <p class="text-sm dark:text-white text-gray-600 italic">Updated 8:52 AM EST, Wed February 7, 2024</p>
             </h1>
-            <p class="font-serif text-base pb-5"><strong>(CNN)-</strong>Once Mike Johnson’s speakership was merely implausible. Now it looks incompetent.</p>
-            <p class="font-serif text-base pb-5">The rookie Republican leader – already struggling to wield a tiny, extreme and malfunctioning majority – suffered a spectacular embarrassment on Tuesday night in a failed vote to impeach Homeland Security Secretary Alejandro Mayorkas.</p>
+            <p class="font-serif text-base pb-5"><strong>(CNN)-</strong>Once Mike Johnson’s speakership was merely implausible. Now it looks incompetent.
+            
+              <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const params = new URLSearchParams(window.location.search);
+                    const index = params.get('index');
+      
+                    // Retrieve the articshow array from localStorage
+                    const articshow = JSON.parse(localStorage.getItem('articshow'));
+      
+                    // Use the index and articshow array to fetch and display the content
+                    if (index !== null && articshow !== null) {
+                      const selectedArticle = articshow[index];
+                      <p class="font-serif text-base pb-5">selectedArticle.content</p>
+
+                      // Display the content of the selected article on the new.html page
+                      // Example: displayArticleContent(selectedArticle);
+                    } else {
+                      console.error('Index or articshow not provided in the URL');
+                    }
+                });
+          </script>
+            
+            </p>
+            <!-- <p class="font-serif text-base pb-5">The rookie Republican leader – already struggling to wield a tiny, extreme and malfunctioning majority – suffered a spectacular embarrassment on Tuesday night in a failed vote to impeach Homeland Security Secretary Alejandro Mayorkas.</p>
             <p class="font-serif text-base pb-5">The drama undermined what was already a questionable case for impeachment – more over policy disagreements than the constitutional standard of treason, bribery or high crimes and misdemeanors.</p>
             <p class="font-serif text-base pb-5">And it told a story of a House in utter disarray.</p>
             <p class="font-serif text-base pb-5">Setting up a high-stakes, televised tour de force for the impeachment of a Cabinet official for only the second time in history was a daring act. But failing to actually pull it off by a couple of votes broke the cardinal rule of not putting a bill on the floor until the numbers are rock solid.</p>
@@ -47,7 +70,7 @@
             <p class="font-serif text-base pb-5">The GOP’s political maneuvering could come back to haunt them in November. Republicans incessantly playing to their political base have little to show voters in critical swing districts in states like New York and California that could decide the control of the House.</p>
             <p class="font-serif text-base pb-5">While havoc in Washington might be a bad look for House Republicans desperate to cling to their narrow majority, it doesn’t necessarily follow that it will doom the Republican front-runner. Trump’s political career has often thrived when he orchestrated pandemonium – like the chaos he’s now arguing is spreading across America and requires a strongman to fix.</p>
             <p class="font-serif text-base pb-5">He is basing his 2024 campaign on false claims that he won the 2020 election and expansive claims that presidents, unlike every other American, are above the law. An appeals court ruling that rejected Trump’s immunity demands on Tuesday means that the US Supreme Court – already hearing one Trump case over his ballot eligibility on Thursday – will likely get further dragged into the bilious politics of this election year.</p>
-            <p class="font-serif text-base pb-5">But Trump remains a credible presidential candidate and enjoys the loyalty of tens of millions of Americans, who accept his arguments that he was cheated out of office and that Biden has failed to secure their safety by not shutting down the border — even though the president insists he lacks the authority to do so.</p>
+            <p class="font-serif text-base pb-5">But Trump remains a credible presidential candidate and enjoys the loyalty of tens of millions of Americans, who accept his arguments that he was cheated out of office and that Biden has failed to secure their safety by not shutting down the border — even though the president insists he lacks the authority to do so.</p> -->
 
         </div>
         <div id="image-container" class="flex flex-col ml-4 md:block lg:block">
@@ -154,23 +177,6 @@
       </aside>
       <p class="ms-auto text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
     </div>
-    <script>
-          document.addEventListener('DOMContentLoaded', function () {
-              const params = new URLSearchParams(window.location.search);
-              const index = params.get('index');
-
-              // Retrieve the articshow array from localStorage
-              const articshow = JSON.parse(localStorage.getItem('articshow'));
-
-              // Use the index and articshow array to fetch and display the content
-              if (index !== null && articshow !== null) {
-                const selectedArticle = articshow[index];
-                // Display the content of the selected article on the new.html page
-                // Example: displayArticleContent(selectedArticle);
-              } else {
-                console.error('Index or articshow not provided in the URL');
-              }
-          });
-    </script>
+    
   </body>
 </html>
