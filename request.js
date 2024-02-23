@@ -367,5 +367,5 @@ function openarticl(index) {
   // Save the articshow array to localStorage
   localStorage.setItem('articshow', JSON.stringify(articshow));
   // Navigate to the new.html page
-  window.location.href = 'new1.html?index=' + index;
+  window.location.href = 'new.html?index=' + index;
 }
